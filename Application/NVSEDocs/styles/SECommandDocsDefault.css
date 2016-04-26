@@ -1,0 +1,359 @@
+body, html {
+    background: #D3D3D3;
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+b {
+    font-size: 1.1em;
+}
+#maincontainer {
+    display: table;
+    height: 100%;
+    width: 100%}
+#topsection {
+    display: table-row;
+    background: #EAEAEA;
+    height: 30px;
+}
+#topsection h1 {
+    margin: 0;
+}
+#contentwrapper {
+    display: table-row;
+    float: left;
+    height: 100%;
+    width: 100%;
+    border-top: 3px solid #000;
+}
+#contentcolumn {
+    margin-left: 422px;
+    border-left: 3px solid #000;
+    background: #D3D3D3;
+	height: 100%;
+    overflow: auto;
+}
+#leftcolumn {
+    background: #D3D3D3;
+    border-top: 3px solid #000;
+    display: table-row;
+    float: left;
+    height: 100%;
+    margin-left: -100%;
+    width: 422px;
+    overflow-x: scroll;
+}
+#footer {
+    background: #000;
+    bottom: 0;
+    clear: left;
+    color: #FFF;
+    display: table-row;
+    font-size: .8em;
+    padding: 4px 0;
+    position: fixed;
+    text-align: center;
+    width: 100%}
+#footer a {
+    color: #DCDCDC;
+}
+#footer span:last-child {
+    border-right: 2px solid #808080;
+    padding-right: 6px;
+}
+.footer_info {
+    border-left: 2px solid #808080;
+    padding-left: 6px;
+    margin-left: 10px;
+}
+.innertube {
+    margin: 10px;
+}
+
+a, a:link, a:visited {
+    color: #00F;
+    text-decoration: none;
+}
+a:active, a:hover {
+    color: #4682B4;
+}
+.list {
+    list-style-type: none;
+    padding-left: 1em;
+}
+.mono, pre, code {
+    font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
+    font-size: .9em;
+}
+.mono_list {
+    font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
+    list-style-type: none;
+    line-height: 1em;
+}
+.mono_list li {
+    padding-bottom: .3em;
+    padding-top: .3em;
+}
+textarea {
+    resize: none;
+    outline: 0;
+}
+.mono_list li span:first-child {
+    display: inline-block;
+    text-align: right;
+    width: 50px;
+    float: left;
+}
+.mono_list li span:first-child:after {
+    content: ":";
+}
+.mono_list li span:last-child {
+    display: inline-block;
+    width: 65%;
+    padding-left: 1em;
+}
+
+
+.func_type_def {
+    padding-bottom: 1em;
+}
+.func_type_def p {
+    padding-left: 1em;
+}
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8  {
+    list-style-type: decimal;
+}
+
+
+.search {
+    width: 55%}
+#function_count {
+    float: right;
+    padding-right: 2px;
+    position: relative;
+    top: -8px;
+}
+#nvse_version {
+    clear: right;
+    float: right;
+    padding-right: 2px;
+    position: relative;
+    top: -12px;
+}
+#function_list {
+    background: #A9A9A9;
+    border: 2px inset;
+    height: 352px;
+    list-style: none;
+    margin-top: 15px;
+    min-width:  352px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-left: 0;
+}
+#function_list li {
+    padding: .18em .5em;
+    cursor: pointer;
+}
+#function_list li:hover {
+    background: #808080;
+}
+.odd {
+    background-color: #DCDCDC;
+}
+.even {
+    background-color: silver;
+}
+.plugin_Name {
+    float: right;
+    margin-right: 10px;
+}
+.noshow {
+    display: none;
+}
+
+#info_table {
+    width: 400px;
+    margin: 20px 2px;
+    font-size:  .8em;
+}
+#info_table li {
+    margin-top:  2px;
+}
+#info_table_bottom, #info_table_top {
+    margin: 10px 0;
+    width: 100%}
+.more_info_list {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    width: 400px;
+    -moz-column-width: 8em;
+    -webkit-column-width: 8em;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+}
+
+
+/* ============================================================================
+ * Includes/Type-Codes
+ * ==========================================================================*/
+	.Sub_Head {
+		font-size: 18px;
+		padding-left: .5em;
+		padding-top: 1.2em;
+	}
+	.type_code_columns_4 {
+		-webkit-column-count: 4;
+		-webkit-column-span: all;
+	}
+	.type_code_columns_3 {
+		-webkit-column-count: 3;
+		-webkit-column-span: all;
+	}
+	.type_code_columns_2 {
+		-webkit-column-count: 2;
+		-webkit-column-span: all;
+	}
+	.type_code_columns_1 {
+		-webkit-column-count: 1;
+		-webkit-column-span: all;
+	}
+	.type_code_columns_2 li span:last-child {
+		width: 85%;
+	}
+	.type_code_columns_1 li span:last-child {
+		width: 90%;
+	}
+/* ==========================================================================*/
+
+
+#function_container {
+    width: 100%;
+    margin-bottom: 40px;
+}
+#function_container p {
+    padding: 5px;
+    margin: 0;
+    max-width: 85%}
+#function_container p p {
+    padding: 5px;
+    margin-left: 10px;
+    max-width: 85%}
+.parameters,  .description,  .example {
+    margin-left: 1em;
+}
+.function_name {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+.example {
+    line-height: 1.3em;
+}
+#geck_link {
+    padding-left: .5em;
+    width: 20px;
+    vertical-align:  middle;
+}
+#plugin_name {
+    position: relative;
+    float: right;
+    clear: right;
+    font-size: 1.1em;
+}
+
+
+/* ============================================================================
+ * Tables
+ * ==========================================================================*/
+.table_plain {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+.table_plain tr:nth-child(even) {
+    background: silver;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+.table_plain td {
+    padding: 5px;
+}
+.table_plain_left {
+    text-align: left;
+}
+.table_plain_fixed {
+    table-layout: fixed;
+}
+.table_plain_fixed td {
+    border: 1px #000 solid;
+}
+/* ==========================================================================*/
+ 
+ 
+
+/* ============================================================================
+ * Modal Contents
+ * ==========================================================================*/
+.semantic-content .modal-inner {
+    margin-left:  -600px;
+    width:  1200px;
+    border-radius:  10px 0 10px 10px;
+    border: 1px solid black;
+}
+.semantic-content .modal-content {
+    max-height:  75vh;
+    border-bottom: 0;
+}
+.semantic-content .modal-close:before {
+    background: none;
+}
+.semantic-content .modal-close:after {
+    margin-left:  571px;
+    border-radius:  10px 10px 0 0;
+    top: 22px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+/* ==========================================================================*/
+
+
+/* ============================================================================
+ * Geshi
+ * ==========================================================================*/
+.geckscript {
+    border: solid #000 1px;
+    background-color: rgba(228, 228, 228, 0.31);
+}
+.li1 {
+    background-color: #E4E4E4;
+}
+.li2 {
+    background-color: #f0f0f0;
+}
+
+.x-geck {
+    background: #fff;
+    border: solid #000 1px;
+    padding: 5px;
+
+}
+/* ==========================================================================*/
+
+/*.x-geck {
+  font: 100%/1.5 Arial; /* 1 */
+/*  background-image: -webkit-linear-gradient(pink 50%, white 50%);
+  background-image: linear-gradient(pink 50%, white 50%); /* 2 */
+/*  background-size: 100% 3em; /* 3 */
+/*  width: 80%;
+}*/

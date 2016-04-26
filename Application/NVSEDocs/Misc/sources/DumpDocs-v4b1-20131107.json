@@ -1,0 +1,283 @@
+{
+	"GetWeaponItemMod": {
+		"Name": "GetWeaponItemMod",
+		"Alias": "none",
+		"NumParameters": "2",
+		"Parameters": [
+			{"url": "", "type": "path type:Integer", "optional": "false"},
+			{"url": "", "type": "item:ObjectID", "optional": "true"}
+		],
+		"ReturnType": [],
+		"Version": "1.2",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Returns the specified item mod of the weapon."
+		],
+		"Examples": [],
+		"Tags": [
+			"Weapon"
+		]
+	},
+
+	"AddItemOwnership": {
+		"Name": "AddItemOwnership",
+		"Alias": "none",
+		"NumParameters": "4",
+		"Parameters": [
+			{"url": "", "type": "item:ObjectID", "optional": "false"},
+			{"url": "", "type": "count:Float", "optional": "false"},
+			{"url": "", "type": "owner:Object", "optional": "false"},
+			{"url": "", "type": "rank:Integer", "optional": "true"}
+		],
+		"ReturnType": [],
+		"Version": "3.1",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Adds an item to a container with a specified ownership.."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"AddItemHealthPercentOwner": {
+		"Name": "AddItemHealthPercentOwner",
+		"Alias": "none",
+		"NumParameters": "5",
+		"Parameters": [
+			{"url": "", "type": "item:ObjectID", "optional": "false"},
+			{"url": "", "type": "count:Float", "optional": "false"},
+			{"url": "", "type": "health:Float", "optional": "false"},
+			{"url": "", "type": "owner:Object", "optional": "false"},
+			{"url": "", "type": "rank:Integer", "optional": "true"}
+		],
+		"ReturnType": [],
+		"Version": "3.1",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Adds an item to a container at a specified health percentage and with an ownership.."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"GetTokenValue": {
+		"Name": "GetTokenValue",
+		"Alias": "GetTV",
+		"NumParameters": "1",
+		"Parameters": [
+			{"url": "", "type": "form:AnyForm", "optional": "false"}
+		],
+		"ReturnType": [],
+		"Version": "3.1",
+		"Condition": "Yes",
+		"Convention": "",
+		"Description": [
+			"Get a token value.."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"SetTokenValue": {
+		"Name": "SetTokenValue",
+		"Alias": "SetTV",
+		"NumParameters": "2",
+		"Parameters": [
+			{"url": "", "type": "item:ObjectID", "optional": "false"},
+			{"url": "", "type": "value:Float", "optional": "false"}
+		],
+		"ReturnType": [],
+		"Version": "3.1",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Set a token value or create a token with value.."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"GetTokenRef": {
+		"Name": "GetTokenRef",
+		"Alias": "GetTR",
+		"NumParameters": "1",
+		"Parameters": [
+			{"url": "", "type": "form:AnyForm", "optional": "false"}
+		],
+		"ReturnType": [],
+		"Version": "3.1",
+		"Condition": "Yes",
+		"Convention": "",
+		"Description": [
+			"Get a token reference.."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"SetTokenRef": {
+		"Name": "SetTokenRef",
+		"Alias": "SetTR",
+		"NumParameters": "2",
+		"Parameters": [
+			{"url": "", "type": "item:ObjectID", "optional": "false"},
+			{"url": "", "type": "reference:Object", "optional": "false"}
+		],
+		"ReturnType": [],
+		"Version": "3.1",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Add or modify a token reference.."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"SetTokenValueAndRef": {
+		"Name": "SetTokenValueAndRef",
+		"Alias": "SetTVR",
+		"NumParameters": "3",
+		"Parameters": [
+			{"url": "", "type": "item:ObjectID", "optional": "false"},
+			{"url": "", "type": "value:Float", "optional": "false"},
+			{"url": "", "type": "reference:Object", "optional": "false"}
+		],
+		"ReturnType": [],
+		"Version": "3.1",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Add or modify a token with value and reference.."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"GetPaired": {
+		"Name": "GetPaired",
+		"Alias": "none",
+		"NumParameters": "2",
+		"Parameters": [
+			{"url": "", "type": "item:ObjectID", "optional": "false"},
+			{"url": "", "type": "actor:Actor", "optional": "false"}
+		],
+		"ReturnType": [],
+		"Version": "3.1",
+		"Condition": "Yes",
+		"Convention": "",
+		"Description": [
+			"Detects if ref and actor are crossreferencing each others."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"IsRefInList": {
+		"Name": "IsRefInList",
+		"Alias": "none",
+		"NumParameters": "2",
+		"Parameters": [
+			{"url": "", "type": "form list:FormList", "optional": "false"},
+			{"url": "", "type": "form:AnyForm", "optional": "false"}
+		],
+		"ReturnType": [],
+		"Version": "3.1",
+		"Condition": "Yes",
+		"Convention": "",
+		"Description": [
+			"Returns the index for the specified form or base Form or permanent base Form."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"RunScript": {
+		"Name": "RunScript",
+		"Alias": "none",
+		"NumParameters": "1",
+		"Parameters": [
+			{"url": "", "type": "item:ObjectID", "optional": "false"}
+		],
+		"ReturnType": [],
+		"Version": "4.2",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Debug."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"tcmd": {
+		"Name": "tcmd",
+		"Alias": "none",
+		"NumParameters": "0",
+		"Parameters": [],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Test."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"tcmd2": {
+		"Name": "tcmd2",
+		"Alias": "testargcmd",
+		"NumParameters": "1",
+		"Parameters": [
+			{"url": "", "type": "int:Integer", "optional": "false"}
+		],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Test."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"tcmd3": {
+		"Name": "tcmd3",
+		"Alias": "testdump",
+		"NumParameters": "1",
+		"Parameters": [
+			{"url": "", "type": "form:ObjectID", "optional": "true"}
+		],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Dump info."
+		],
+		"Examples": [],
+		"Tags": []
+	},
+
+	"DumpDocs": {
+		"Name": "DumpDocs",
+		"Alias": "none",
+		"NumParameters": "0",
+		"Parameters": [],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"."
+		],
+		"Examples": [],
+		"Tags": []
+	}
+}

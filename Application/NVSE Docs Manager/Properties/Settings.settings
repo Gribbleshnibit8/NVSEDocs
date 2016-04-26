@@ -1,0 +1,34 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NVSE_Docs_Manager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TypeCodes" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string /&gt;
+  &lt;string&gt;Actor_Flags&lt;/string&gt;
+  &lt;string&gt;Actor_Value_Codes&lt;/string&gt;
+  &lt;string&gt;Ammo_Trait_ID&lt;/string&gt;
+  &lt;string&gt;Attack_Animations&lt;/string&gt;
+  &lt;string&gt;Biped_Masks&lt;/string&gt;
+  &lt;string&gt;Biped_Path_Codes&lt;/string&gt;
+  &lt;string&gt;Control_Codes &lt;/string&gt;
+  &lt;string&gt;Creature_Type_Codes&lt;/string&gt;
+  &lt;string&gt;Default_Forms&lt;/string&gt;
+  &lt;string&gt;DirectX_Scancodes &lt;/string&gt;
+  &lt;string&gt;Equip_Slots&lt;/string&gt;
+  &lt;string&gt;Equip_Type&lt;/string&gt;
+  &lt;string&gt;Form_Type_IDs &lt;/string&gt;
+  &lt;string&gt;Format_Specifiers &lt;/string&gt;
+  &lt;string&gt;Map_Marker_Type &lt;/string&gt;
+  &lt;string&gt;Perk_Entry_Point&lt;/string&gt;
+  &lt;string&gt;Radio_Broadcast_Type &lt;/string&gt;
+  &lt;string&gt;Reload_Animations &lt;/string&gt;
+  &lt;string&gt;Weapon_Flags &lt;/string&gt;
+  &lt;string&gt;Weapon_Hand_Grips &lt;/string&gt;
+  &lt;string&gt;Weapon_Mod &lt;/string&gt;
+  &lt;string&gt;Weapon_Type&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

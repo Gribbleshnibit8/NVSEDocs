@@ -1,0 +1,3129 @@
+[
+  {
+    "ReturnType": [
+      {
+        "type": "int:Version"
+      }
+    ],
+    "Description": [
+      "Returns the version of the Lutana NVSE plugin.",
+      "This has been deprecated by the NVSE function [GetPluginVersion,GetPluginVersion ]."
+    ],
+    "Name": "GetLNVersion",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:FilePath"
+      },
+      {
+        "type": "bool:IsDirectory",
+        "optional": "True"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Exists"
+      }
+    ],
+    "Description": [
+      "Returns whether or not a file exists in the Data directory or a loaded BSA archivefor a given file path. ",
+      "As of 9.0, returns int instead of bool: Returns &#39;2&#39; if the file is found within a BSA. You can pass a string_var by using the ToString ($) operator.",
+      "The second parameter will look for a directory by that name instead of a file. Returns false for non-directory paths."
+    ],
+    "Name": "FileExists",
+    "Version": "4.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "File"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "string_var:TimeStamp"
+      }
+    ],
+    "Description": [
+      "Returns a string_var containing the user&#39;s current local time in the following format: &quot;20140326072834&quot; (YYYYMMDDHHmmSS)"
+    ],
+    "Name": "GetTimeStamp",
+    "Version": "2.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "String"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "formList:OutList"
+      },
+      {
+        "url": "Form_Type_IDs",
+        "type": "int:TypeID"
+      },
+      {
+        "type": "int:Index",
+        "optional": "True"
+      },
+      {
+        "type": "bool:NoClear",
+        "optional": "True"
+      }
+    ],
+    "Description": [
+      "Empties a form list and then fills it with every form of the given type ID from all loaded plugins. [Form_Type_IDs,Form Type IDs].",
+      "Passing a value for the &#39;index&#39; parameter loads only forms from the plugin at that mod index (default: -1 for all plugins). ",
+      "Passing a 1 for the &#39;noclear&#39; parameter prevents the function from emptying the list before adding forms to it."
+    ],
+    "Name": "GetLoadedType",
+    "Alias": "GLT",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "formList:InputList"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array_var:ListArray"
+      }
+    ],
+    "Description": [
+      "Converts a form list into an array_var with elements at matching indexes.",
+      "Deprecated by NVSE  [GetListForms,GetListForms]"
+    ],
+    "Name": "ListToArray",
+    "Version": "3.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:VariableName"
+      },
+      {
+        "type": "float:Value"
+      },
+      {
+        "type": "baseForm:Quest",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:OldValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a numerical variable by name in the script attached to a reference or quest.",
+      "Deprecated by NVSE  [SetVariable]"
+    ],
+    "Name": "SetVariableFloat",
+    "Version": "2.0",
+    "Convention": "E",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:VariableName"
+      },
+      {
+        "type": "ref:Value"
+      },
+      {
+        "type": "baseForm:Quest",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:OldValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a reference variable by name in the script attached to a reference or quest.",
+      "Deprecated by NVSE  [SetRefVariable]"
+    ],
+    "Name": "SetVariableRef",
+    "Version": "2.0",
+    "Convention": "E",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "url": "Form_Type_IDs",
+        "type": "int:TypeID"
+      },
+      {
+        "type": "int:CellDepth",
+        "optional": "true"
+      },
+      {
+        "type": "bool:IncludeTakenRefs",
+        "optional": "true"
+      },
+      {
+        "type": "cell:TargetCell",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array_var:CellRefs"
+      }
+    ],
+    "Description": [
+      "Used in place of [GetFirstRef,GetFirstRef] or [GetFirstRefInCell,GetFirstRefInCell] to get an array of all the references in a cell (and optional surrounding cells).",
+      "Deprecated by NVSE  [GetRefs] and [GetRefsInCell]"
+    ],
+    "Examples": [
+      {
+        "Example": [
+          "array_var ar_cellContents",
+          "array_var ar_element",
+          " ",
+          "let ar_cellContents := GetCellRefs 200 2        ; find actor refs within 2 cells of me",
+          "ForEach ar_element <- ar_cellContents",
+          "        ; do what needs to be done here",
+          "        ; maybe we have a condition that skips the rest so use",
+          "        Continue",
+          "        ; or another condition that ends the loop, so",
+          "        Break",
+          "Loop"
+        ]
+      }
+    ],
+    "Name": "GetCellRefs",
+    "Version": "4.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Actor",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:CombatStyle"
+      }
+    ],
+    "Description": [
+      "Returns the current combat style used by an NPC or creature reference."
+    ],
+    "Name": "GetCombatStyle",
+    "ReferenceType": "actor",
+    "Version": "4.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "Lutana",
+      "Actor"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Description": [
+      "Saves the player&#39;s current hotkeys to an in-memory array."
+    ],
+    "Name": "SaveHotkeys",
+    "Version": "4.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Hotkey"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Description": [
+      "Restores the player&#39;s hotkeys stored with SaveHotkeys."
+    ],
+    "Name": "RestoreHotkeys",
+    "Version": "4.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Hotkey"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "baseForm:Perk"
+      },
+      {
+        "type": "bool:Alt",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Rank"
+      }
+    ],
+    "Description": [
+      "Return the rank of a perk on the player, or 0 if the player does not have the perk. Passing 1 to the &#39;alt&#39; parameter uses the follower perk list.",
+      "Deprecated by NVSE [GetPerkRank] and [GetAltPerkRank]."
+    ],
+    "Name": "HasPerkRank",
+    "Version": "5.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:Global"
+      },
+      {
+        "type": "float:Value"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:OldValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a numeric global variable."
+    ],
+    "Name": "SetGlobalValue",
+    "Version": "5.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "int:Index"
+      },
+      {
+        "type": "int:KeepExtension"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:ModName"
+      }
+    ],
+    "Description": [
+      "Returns a string containing the file name, minus the extension, of the mod at the given index. Pass '1' as an optional second parameter to keep the extension."
+    ],
+    "Name": "GetModName",
+    "Version": "5.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "String"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "baseForm:Armor"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "formList:BipedModelList"
+      }
+    ],
+    "Description": [
+      "Returns the biped model list of an armor form."
+    ],
+    "Name": "GetBipedModelList",
+    "Version": "5.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "baseForm:Armor"
+      },
+      {
+        "type": "formList:BipedModelList"
+      }
+    ],
+    "Description": [
+      "Sets the biped model list of an armor form."
+    ],
+    "Name": "SetBipedModelList",
+    "Version": "5.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      },
+      {
+        "type": "ref:FormToAdd"
+      },
+      {
+        "type": "int:Level"
+      },
+      {
+        "type": "int:Count"
+      },
+      {
+        "type": "float:Health"
+      }
+    ],
+    "Description": [
+      "Creates a new entry in a leveled list with the given parameters. (Use decimal values between 0.0 and 1.0 for health percentage.)"
+    ],
+    "Name": "LeveledListAddForm",
+    "Alias": "LListAddForm",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      },
+      {
+        "type": "ref:FormToRemove"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:NumberRemoved"
+      }
+    ],
+    "Description": [
+      "Removes all entries with the given form from a leveled list. Returns the number of entries removed."
+    ],
+    "Name": "LeveledListRemoveForm",
+    "Alias": "LListRemoveForm",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:NumberRemoved"
+      }
+    ],
+    "Description": [
+      "Returns the number of entries in a leveled list."
+    ],
+    "Name": "GetNumLevItems",
+    "Alias": "LListGetCount",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      },
+      {
+        "type": "ref:FormToFind"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Index"
+      }
+    ],
+    "Description": [
+      "Returns the index of the first entry containing the given form."
+    ],
+    "Name": "GetLevItemIndexByForm",
+    "Alias": "LListGetFormIndex",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      },
+      {
+        "type": "int:Level"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Index"
+      }
+    ],
+    "Description": [
+      "Returns the index of the first entry for the given level."
+    ],
+    "Name": "GetLevItemIndexByLevel",
+    "Alias": "LListGetLevelIndex",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      },
+      {
+        "type": "int:Index"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:FormAtIndex"
+      }
+    ],
+    "Description": [
+      "Returns the form of the entry at the given index."
+    ],
+    "Name": "GetNthLevItem",
+    "Alias": "LListGetNthForm",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      },
+      {
+        "type": "int:Index"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Level"
+      }
+    ],
+    "Description": [
+      "Returns the level of the entry at the given index."
+    ],
+    "Name": "GetNthLevItemLevel",
+    "Alias": "LListGetNthLevel",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      },
+      {
+        "type": "int:Index"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Count"
+      }
+    ],
+    "Description": [
+      "Returns the count of the entry at the given index."
+    ],
+    "Name": "GetNthLevItemCount",
+    "Alias": "LListGetNthCount",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      },
+      {
+        "type": "int:Index"
+      }
+    ],
+    "Description": [
+      "Removes the leveled list entry at the given index."
+    ],
+    "Name": "RemoveNthLevItem",
+    "Alias": "LListRemoveNthForm",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      }
+    ],
+    "Description": [
+      "Removes all entries from a leveled list."
+    ],
+    "Name": "LeveledListClear",
+    "Alias": "LListClear",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Chance"
+      }
+    ],
+    "Description": [
+      "Returns the &#39;none&#39; chance of a leveled list."
+    ],
+    "Name": "GetChanceNone",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory",
+      "LeveledList",
+      "LList"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Chance"
+      }
+    ],
+    "Description": [
+      "Returns the global variable governing the &#39;none&#39; chance of a leveled list."
+    ],
+    "Name": "GetChanceNoneGlobal",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory",
+      "LeveledList",
+      "LList"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      },
+      {
+        "type": "int:Chance"
+      }
+    ],
+    "Description": [
+      "Sets the 'none' chance of a leveled list."
+    ],
+    "Name": "SetChanceNone",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory",
+      "LeveledList",
+      "LList"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LeveledList"
+      }
+    ],
+    "Description": [
+      "Similar to ar_Dump, outputs all entries to the console."
+    ],
+    "Name": "DumpLevList",
+    "Alias": "LListDump",
+    "Version": "6.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Inventory",
+      "LeveledList",
+      "LList"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "int:Port"
+      }
+    ],
+    "Description": [
+      "Returns which 'port' the gamepad is using, ranging from 1 to 4. This corresponds to the light around the Guide button on Xbox controllers."
+    ],
+    "Name": "GetController",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "int:BitMask"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:Pressed"
+      }
+    ],
+    "Description": [
+      "Returns whether or not the button is currently pressed. Uses a bitmask.",
+      "00001 : DPAD_UP<br>00002 : DPAD_DOWN<br>00004 : DPAD_LEFT<br>00008 : DPAD_RIGHT<br>00016 : START<br>00032 : BACK<br>00064 : LEFT_THUMBSTICK<br>00128 : RIGHT_THUMBSTICK<br>00256 : LEFT_SHOULDER (LB)<br>00512 : RIGHT_SHOULDER (RB)<br>01024 : XBOX_GUIDE<br>04096 : BUTTON_A<br>08192 : BUTTON_B<br>16384 : BUTTON_X<br>32768 : BUTTON_Y"
+    ],
+    "Name": "IsButtonPressed",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "int:BitMask"
+      }
+    ],
+    "Description": [
+      "Returns a bitfield of buttons currently pressed.",
+      "00001 : DPAD_UP&lt;br&gt;00002 : DPAD_DOWN&lt;br&gt;00004 : DPAD_LEFT&lt;br&gt;00008 : DPAD_RIGHT&lt;br&gt;00016 : START&lt;br&gt;00032 : BACK&lt;br&gt;00064 : LEFT_THUMBSTICK&lt;br&gt;00128 : RIGHT_THUMBSTICK&lt;br&gt;00256 : LEFT_SHOULDER (LB)&lt;br&gt;00512 : RIGHT_SHOULDER (RB)&lt;br&gt;01024 : XBOX_GUIDE&lt;br&gt;04096 : BUTTON_A&lt;br&gt;08192 : BUTTON_B&lt;br&gt;16384 : BUTTON_X&lt;br&gt;32768 : BUTTON_Y"
+    ],
+    "Name": "GetPressedButtons",
+    "Version": "2.1",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "float:XPos"
+      }
+    ],
+    "Description": [
+      "Returns a value ranging from -1.00 to 1.00 for the x-axis position of the left joystick."
+    ],
+    "Name": "GetLeftStickX",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "float:YPos"
+      }
+    ],
+    "Description": [
+      "Returns a value ranging from -1.00 to 1.00 for the y-axis position of the left joystick."
+    ],
+    "Name": "GetLeftStickY",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "float:XPos"
+      }
+    ],
+    "Description": [
+      "Returns a value ranging from -1.00 to 1.00 for the x-axis position of the right joystick."
+    ],
+    "Name": "GetRightStickX",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "float:YPos"
+      }
+    ],
+    "Description": [
+      "Returns a value ranging from -1.00 to 1.00 for the y-axis position of the right joystick."
+    ],
+    "Name": "GetRightStickY",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "float:DeadZone"
+      }
+    ],
+    "Description": [
+      "Returns the x-axis deadzone configured for the joysticks."
+    ],
+    "Name": "GetDeadZoneX",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "float:DeadZone"
+      }
+    ],
+    "Description": [
+      "Returns the y-axis deadzone configured for the joysticks."
+    ],
+    "Name": "GetDeadZoneY",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "float:DeadZone"
+      }
+    ],
+    "Description": [
+      "Specifies the x-axis deadzone used by the joysticks."
+    ],
+    "Name": "SetDeadZoneX",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "float:DeadZone"
+      }
+    ],
+    "Description": [
+      "Specifies the y-axis deadzone used by the joysticks."
+    ],
+    "Name": "SetDeadZoneY",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "float:TriggerValue"
+      }
+    ],
+    "Description": [
+      "Returns a value ranging from 0.00 to 1.00 for how far the left trigger is depressed."
+    ],
+    "Name": "GetLeftTrigger",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "float:TriggerValue"
+      }
+    ],
+    "Description": [
+      "Returns a value ranging from 0.00 to 1.00 for how far the right trigger is depressed."
+    ],
+    "Name": "GetRightTrigger",
+    "Version": "2.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "Controller",
+      "Input"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Description": [
+      "Removes all of the player&#39;s current hotkeys."
+    ],
+    "Name": "ClearAllHotkeys",
+    "Version": "4.0",
+    "Convention": "B",
+    "Tags": [
+      "Hotkey"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "perk:Perk",
+        "optional": "False"
+      },
+      {
+        "type": "int:Rank",
+        "optional": "False"
+      },
+      {
+        "type": "bool:Alt",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the rank of a perk on the player, or adds it at a specified rank if they don&#39;t have it. Passing 1 to the &#39;alt&#39; parameter uses the follower perk list."
+    ],
+    "Name": "SetPerkRank",
+    "ReferenceType": "player",
+    "Version": "7.0",
+    "Convention": "E",
+    "Tags": [
+      "Lutana",
+      "Perk"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "int:Index"
+      }
+    ],
+    "Description": [
+      "Returns the mod index of the script that calls the function. (A quick shortcut for MCM scripting.)"
+    ],
+    "Name": "GetSelfModIndex",
+    "Version": "6.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Form",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array:OverrideList"
+      }
+    ],
+    "Description": [
+      "Returns an array containing the filenames of all plugins that contain or override the given form."
+    ],
+    "Name": "GetFormMods",
+    "Version": "7.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Form",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:IsOverridden"
+      }
+    ],
+    "Description": [
+      "Returns whether or not a form is overridden by a plugin lower in the load order than the calling script."
+    ],
+    "Name": "IsFormOverridden",
+    "Version": "7.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "ref:MerchantContainer"
+      }
+    ],
+    "Description": [
+      "Returns the merchant container associated to an actor."
+    ],
+    "Name": "GetMerchantContainer",
+    "ReferenceType": "actor",
+    "Version": "7.0",
+    "Convention": "E",
+    "Tags": [
+      "Lutana",
+      "NPC"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "url": "Map_Marker_Type",
+        "type": "ref:mapMarker",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:MarkerName"
+      }
+    ],
+    "Description": [
+      "Returns the name of a map marker."
+    ],
+    "Name": "GetMapMarkerName",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:NewName",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the name of a map marker."
+    ],
+    "Name": "SetMapMarkerName",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "url": "Map_Marker_Type",
+        "type": "ref:mapMarker",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:IsVisible"
+      }
+    ],
+    "Description": [
+      "Returns the &#39;visible&#39; flag of a map marker."
+    ],
+    "Name": "GetMapMarkerVisible",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "bool:Flag",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the &#39;visible&#39; flag of a map marker."
+    ],
+    "Name": "SetMapMarkerVisible",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "url": "Map_Marker_Type",
+        "type": "ref:mapMarker",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:CanTravel"
+      }
+    ],
+    "Description": [
+      "Returns the &#39;can travel&#39; flag of a map marker."
+    ],
+    "Name": "GetMapMarkerTravel",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "bool:CanTravel",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the &#39;can travel&#39; flag of a map marker."
+    ],
+    "Name": "SetMapMarkerTravel",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:isRadioRef"
+      }
+    ],
+    "Description": [
+      "Returns whether or not a reference is a radio."
+    ],
+    "Name": "IsRadioRef",
+    "ReferenceType": "radioRef",
+    "Version": "8.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana",
+      "radio"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "url": "Radio_Broadcast_Type",
+        "type": "int:broadcastType"
+      }
+    ],
+    "Description": [
+      "Returns the broadcast type of a radio reference."
+    ],
+    "Name": "GetRadioBroadcastType",
+    "ReferenceType": "radioRef",
+    "Version": "8.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana",
+      "radio"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "url": "Radio_Broadcast_Type",
+        "type": "int:broadcastType",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the broadcast type of a rado reference."
+    ],
+    "Name": "SetRadioBroadcastType",
+    "ReferenceType": "radioRef",
+    "Version": "8.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana",
+      "radio"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "float:Radius"
+      }
+    ],
+    "Description": [
+      "Returns the radius of a radius-type radio broadcast."
+    ],
+    "Name": "GetRadioRadius",
+    "ReferenceType": "radioRef",
+    "Version": "8.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana",
+      "radio"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "url": "Radio_Broadcast_Type",
+        "type": "ref:radioRef",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:staticPercentage"
+      }
+    ],
+    "Description": [
+      "Returns the static percentage (0.00 - 1.00) of a radius-type radio broadcast."
+    ],
+    "Name": "GetRadioStatic",
+    "ReferenceType": "radioRef",
+    "Version": "8.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana",
+      "radio"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "float:staticPercentage",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the static percentage (0.00 - 1.00) of a radius-type radio broadcast."
+    ],
+    "Name": "SetRadioStatic",
+    "ReferenceType": "radioRef",
+    "Version": "8.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana",
+      "radio"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "ref:cellRef"
+      }
+    ],
+    "Description": [
+      "Returns the exterior position reference of a radius-type radio broadcast."
+    ],
+    "Name": "GetRadioPosRef",
+    "ReferenceType": "radioRef",
+    "Version": "8.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana",
+      "radio"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:PositionReference",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the exterior position reference of a radius-type radio broadcast."
+    ],
+    "Name": "SetRadioPosRef",
+    "ReferenceType": "radioRef",
+    "Version": "8.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana",
+      "radio"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Form",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:"
+      }
+    ],
+    "Description": [
+      "Returns the aggro radius of an NPC or creature form or reference."
+    ],
+    "Name": "LNGetAggroRadius",
+    "Version": "8.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:form",
+        "optional": "False"
+      },
+      {
+        "type": "int:radius",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the aggro radius of an NPC or creature form or reference."
+    ],
+    "Name": "LNSetAggroRadius",
+    "Version": "8.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:Name",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Outputs information about all forms that match the provided string to the console. Use quotation marks around strings that contain a space.",
+      "This is intended to partially emulate the way the &#39;help&#39; command works in the Skyrim console."
+    ],
+    "Name": "Search",
+    "Version": "8.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "Lutana",
+      "console"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LockedObject"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:LockedStateLevel",
+        "value": "0-3"
+      }
+    ],
+    "Description": [
+      "Returns 1 if an item has been &quot;locked out&quot; by failing the hacking or lockpicking minigames. Returns 2 if the player has failed twice through the Infiltrator or Computer Whiz perks. Returns 3 for doors flagged as inaccessible."
+    ],
+    "Name": "GetLockedOut",
+    "Version": "9.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "Lutana",
+      "lock"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "int:LockedStateLevel",
+        "optional": "False",
+        "value": "0-2"
+      },
+      {
+        "type": "ref:LockableObject",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the &quot;locked out&quot; state (0-2) of an item as described in GetLockedOut."
+    ],
+    "Name": "SetLockedOut",
+    "Version": "9.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "Lutana",
+      "lock"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:mapMarker",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:isMapMarker"
+      }
+    ],
+    "Description": [
+      "Returns whether or not a reference is a map marker."
+    ],
+    "Name": "IsMapMarker",
+    "ReferenceType": "mapMarker",
+    "Version": "9.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana",
+      "map",
+      "map marker"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": ":Cell",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array:coords"
+      }
+    ],
+    "Description": [
+      "Returns a stringmap with two keys ( &quot;x&quot; and &quot;y&quot; ) with values matching the X and Y coordinates of an exterior cell."
+    ],
+    "Name": "GetCellCoords",
+    "ReferenceType": "cell",
+    "Version": "9.0",
+    "Convention": "B",
+    "Tags": [
+      "Lutana",
+      "cell"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Actor_Value_Codes",
+        "type": "int:ActorValue"
+      }
+    ],
+    "Description": [
+      "Returns the actor value code of a recipe&#39;s required skill."
+    ],
+    "Name": "GetRecipeRequiredSkill",
+    "Version": "10",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      },
+      {
+        "type": ":ActorValue",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the actor value code of a recipe&#39;s required skill."
+    ],
+    "Name": "SetRecipeRequiredSkill",
+    "Version": "10",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:SkillLevel"
+      }
+    ],
+    "Description": [
+      "Returns the skill level required by a recipe."
+    ],
+    "Name": "GetRecipeRequiredSkillLevel",
+    "Version": "10",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      },
+      {
+        "type": "int:Level",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the skill level required by a recipe."
+    ],
+    "Name": "SetRecipeRequiredSkillLevel",
+    "Version": "10",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array:RecipeInputs"
+      }
+    ],
+    "Description": [
+      "Returns an array of items requried for a recipe."
+    ],
+    "Name": "GetRecipeInputForms",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      },
+      {
+        "type": "form:InputItem",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Count"
+      }
+    ],
+    "Description": [
+      "Returns the amount of an item required for a recipe."
+    ],
+    "Name": "GetRecipeInputCount",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      },
+      {
+        "type": "form:InputItem",
+        "optional": "False"
+      },
+      {
+        "type": "int:Count",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the amount of an item required for a recipe."
+    ],
+    "Name": "SetRecipeInputCount",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      },
+      {
+        "type": "form:OldItem",
+        "optional": "False"
+      },
+      {
+        "type": "int:NewItem",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Replaces an item required for a recipe with another item."
+    ],
+    "Name": "ReplaceRecipeInputForm",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array:OutputItems"
+      }
+    ],
+    "Description": [
+      "Returns an array of items produced by a recipe."
+    ],
+    "Name": "GetRecipeOutputForms",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      },
+      {
+        "type": "form:OutputItem",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Count"
+      }
+    ],
+    "Description": [
+      "Returns the amount of a form produced by a recipe."
+    ],
+    "Name": "GetRecipeOutputCount",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      },
+      {
+        "type": "form:OutputItem",
+        "optional": "False"
+      },
+      {
+        "type": "int:Count",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the amount of an item produced by a recipe."
+    ],
+    "Name": "SetRecipeOutputCount",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:Recipe",
+        "optional": "False"
+      },
+      {
+        "type": "form:OldItem",
+        "optional": "False"
+      },
+      {
+        "type": "int:NewItem",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the amount of an item produced by a recipe."
+    ],
+    "Name": "ReplaceRecipeOutputForm",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:FilePath",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:FileHash"
+      }
+    ],
+    "Description": [
+      "Returns the MD5 hash of a file in the Data directory."
+    ],
+    "Name": "MD5File ",
+    "Version": "10",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:FilePath",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:FileHash"
+      }
+    ],
+    "Description": [
+      "Returns the SHA1 hash of a file in the Data directory."
+    ],
+    "Name": "SHA1File",
+    "Version": "10",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "url": "Form_Type_IDs",
+        "type": "int:TypeID"
+      },
+      {
+        "type": "int:Index",
+        "optional": "True"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array:LoadedTypes"
+      }
+    ],
+    "Description": [
+      "Similar to GetLoadedType, but returns an array directly.",
+      "Passing a value for the &#39;index&#39; parameter loads only forms from the plugin at that mod index (default: -1 for all plugins). "
+    ],
+    "Name": "GetLoadedTypeArray",
+    "Alias": "GLTA",
+    "Version": "10",
+    "Convention": "B",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "form:FormToFind",
+        "optional": "False"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array:LoadedRefs"
+      }
+    ],
+    "Description": [
+      "Returns an array of loaded references to a form."
+    ],
+    "Name": "GetFormRefs ",
+    "Version": "10",
+    "Convention": "E",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Creature"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Creature_Type_Codes",
+        "type": "int:CreatureType"
+      }
+    ],
+    "Description": [
+      "Returns the type ID of a creature form or reference."
+    ],
+    "Name": "GetCreatureType",
+    "ReferenceType": "creature",
+    "Version": "10",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "actor"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Terminal"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:Note",
+        "value": "0-3"
+      }
+    ],
+    "Description": [
+      "Returns the password note of a terminal."
+    ],
+    "Name": "GetPasswordNote",
+    "ReferenceType": "terminal",
+    "Version": "10.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "Lutana",
+      "lock"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Terminal"
+      }
+    ],
+    "Description": [
+      "Sets the password note of a terminal."
+    ],
+    "Name": "SetPasswordNote",
+    "ReferenceType": "terminal",
+    "Version": "10",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "Lutana",
+      "lock"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "bool:IsHidden"
+      }
+    ],
+    "Description": [
+      "Returns the &#39;show all hidden&#39; flag of a map marker."
+    ],
+    "Name": "GetMapMarkerHidden",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "bool:IsHidden",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the &#39;show all hidden&#39; flag of a map marker."
+    ],
+    "Name": "SetMapMarkerHidden",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "url": "Map_Marker_Type",
+        "type": "int:MarkerType"
+      }
+    ],
+    "Description": [
+      "Returns the type of a map marker."
+    ],
+    "Name": "GetMapMarkerType",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "url": "Map_Marker_Type",
+        "type": "int:MarkerType",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the type of a map marker."
+    ],
+    "Name": "SetMapMarkerType",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "ref:Reputation"
+      }
+    ],
+    "Description": [
+      "Returns the reputation associated to a map marker."
+    ],
+    "Name": "GetMapMarkerRep",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Reputation",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the reputation associated to a map marker."
+    ],
+    "Name": "SetMapMarkerRep",
+    "ReferenceType": "mapMarker",
+    "Version": "7.0",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "Lutana"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "float:Radius",
+        "optional": "False"
+      }
+    ],
+    "Description": [
+      "Sets the radius of a radius-type radio broadcast."
+    ],
+    "Name": "SetRadioRadius",
+    "ReferenceType": "radioRef",
+    "Version": "8.0",
+    "Convention": "R",
+    "Tags": [
+      "Lutana",
+      "radio"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:KeyString"
+      },
+      {
+        "type": "string:FileName",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:Value"
+      }
+    ],
+    "Description": [
+      "Returns the value of an INI key as a string.",
+      "INI files are read from and written to in the Data\\config\\ folder (as in MCM&#39;s INI functions). Format Example",
+      "If no filename is specified, the name of the mod the function is called from is used. Subdirectories can be defined in the path, e.g. &quot;subDir\\nameOfFile&quot;",
+      "Writing to an INI file that does not exist will create it along with any non-existent subdirectories in its path.",
+      "A keystring is a string containing both the section and key in the format: &quot;Section:Key&quot; (&#39;\\&#39; and &#39;/&#39; may also be used as the delimiter.)"
+    ],
+    "Name": "GetINIString",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:KeyString"
+      },
+      {
+        "type": "string:Value"
+      },
+      {
+        "type": "string:FileName",
+        "optional": "true"
+      }
+    ],
+    "Description": [
+      "Sets the value of an INI key.",
+      "INI files are read from and written to in the Data\\config\\ folder (as in MCM&#39;s INI functions). Format Example",
+      "If no filename is specified, the name of the mod the function is called from is used. Subdirectories can be defined in the path, e.g. &quot;subDir\\nameOfFile&quot;",
+      "Writing to an INI file that does not exist will create it along with any non-existent subdirectories in its path.",
+      "A keystring is a string containing both the section and key in the format: &quot;Section:Key&quot; (&#39;\\&#39; and &#39;/&#39; may also be used as the delimiter.)"
+    ],
+    "Name": "SetINIString",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "ini",
+      "config"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:KeyString"
+      },
+      {
+        "type": "string:FileName",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:Value"
+      }
+    ],
+    "Description": [
+      "Returns the value of an INI key as a float.",
+      "INI files are read from and written to in the Data\\config\\ folder (as in MCM&#39;s INI functions). Format Example",
+      "If no filename is specified, the name of the mod the function is called from is used. Subdirectories can be defined in the path, e.g. &quot;subDir\\nameOfFile&quot;",
+      "Writing to an INI file that does not exist will create it along with any non-existent subdirectories in its path.",
+      "A keystring is a string containing both the section and key in the format: &quot;Section:Key&quot; (&#39;\\&#39; and &#39;/&#39; may also be used as the delimiter.)"
+    ],
+    "Name": "GetINIFloat",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "ini",
+      "config"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:KeyString"
+      },
+      {
+        "type": "float:Value"
+      },
+      {
+        "type": "string:FileName",
+        "optional": "true"
+      }
+    ],
+    "Description": [
+      "Sets the numerical value of an INI key.",
+      "INI files are read from and written to in the Data\\config\\ folder (as in MCM&#39;s INI functions). Format Example",
+      "If no filename is specified, the name of the mod the function is called from is used. Subdirectories can be defined in the path, e.g. &quot;subDir\\nameOfFile&quot;",
+      "Writing to an INI file that does not exist will create it along with any non-existent subdirectories in its path.",
+      "A keystring is a string containing both the section and key in the format: &quot;Section:Key&quot; (&#39;\\&#39; and &#39;/&#39; may also be used as the delimiter.)"
+    ],
+    "Name": "SetINIFloat",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "ini",
+      "config"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:Section"
+      },
+      {
+        "type": "string:FileName",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array:KeyValues"
+      }
+    ],
+    "Description": [
+      "Returns a stringmap of all keys in an INI section and their values.",
+      "INI files are read from and written to in the Data\\config\\ folder (as in MCM&#39;s INI functions). Format Example",
+      "If no filename is specified, the name of the mod the function is called from is used. Subdirectories can be defined in the path, e.g. &quot;subDir\\nameOfFile&quot;",
+      "Writing to an INI file that does not exist will create it along with any non-existent subdirectories in its path.",
+      "A keystring is a string containing both the section and key in the format: &quot;Section:Key&quot; (&#39;\\&#39; and &#39;/&#39; may also be used as the delimiter.)"
+    ],
+    "Name": "GetINISection",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "ini",
+      "config"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:Section"
+      },
+      {
+        "type": "array:KeyValues"
+      },
+      {
+        "type": "string:FileName",
+        "optional": "true"
+      }
+    ],
+    "Description": [
+      "Sets the value of multiple keys in an INI section using an array.",
+      "INI files are read from and written to in the Data\\config\\ folder (as in MCM&#39;s INI functions). Format Example",
+      "If no filename is specified, the name of the mod the function is called from is used. Subdirectories can be defined in the path, e.g. &quot;subDir\\nameOfFile&quot;",
+      "Writing to an INI file that does not exist will create it along with any non-existent subdirectories in its path.",
+      "A keystring is a string containing both the section and key in the format: &quot;Section:Key&quot; (&#39;\\&#39; and &#39;/&#39; may also be used as the delimiter.)"
+    ],
+    "Name": "SetINISection",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "ini",
+      "config"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Perk"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Count"
+      }
+    ],
+    "Description": [
+      "Returns the number of entries in a perk&#39;s entry list."
+    ],
+    "Name": "GetPerkEntryCount",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "perk"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Perk"
+      },
+      {
+        "type": "int:Index"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "int:EntryType"
+      }
+    ],
+    "Description": [
+      "Returns the type of the nth entry in a perk&#39;s entry list."
+    ],
+    "Name": "GetNthPerkEntryType",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "perk"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Perk"
+      },
+      {
+        "type": "int:Index"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Perk_Entry",
+        "type": "int:EntryPointType"
+      }
+    ],
+    "Description": [
+      "Returns the entry point code of the nth entry in a perk&#39;s entry list."
+    ],
+    "Name": "GetNthPerkEntryFunction",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "perk"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Perk"
+      },
+      {
+        "type": "int:Index"
+      },
+      {
+        "url": "Perk_Entry",
+        "type": "int:EntryPointType"
+      }
+    ],
+    "Description": [
+      "Sets the entry point code of the nth entry in a perk&#39;s entry list."
+    ],
+    "Name": "SetNthPerkEntryFunction",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "perk"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Perk"
+      },
+      {
+        "type": "int:Index"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "ref:Form"
+      }
+    ],
+    "Description": [
+      "Returns the form associated to the nth entry in a perk&#39;s entry list.",
+      "LeveledList for type 3, Ability for type 5, Quest for type 6"
+    ],
+    "Name": "GetNthPerkEntryForm",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "perk"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Perk"
+      },
+      {
+        "type": "int:Index"
+      },
+      {
+        "type": "ref:Form"
+      }
+    ],
+    "Description": [
+      "Sets the form associated to the nth entry in a perk&#39;s entry list.",
+      "LeveledList for type 3, Ability for type 5, Quest for type 6"
+    ],
+    "Name": "SetNthPerkEntryForm",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "perk"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Perk"
+      },
+      {
+        "type": "int:Index"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "float:Value"
+      }
+    ],
+    "Description": [
+      "eturns the first value of the nth entry in a perk&#39;s entry list. (Stage for type 6)"
+    ],
+    "Name": "GetNthPerkEntryValue1",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "perk"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Perk"
+      },
+      {
+        "type": "int:Index"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "float:Value"
+      }
+    ],
+    "Description": [
+      "Returns the second value of the nth entry in a perk&#39;s entry list. (type 2 only)"
+    ],
+    "Name": "GetNthPerkEntryValue2",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "perk"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Perk"
+      },
+      {
+        "type": "int:Index"
+      },
+      {
+        "type": "float:Value"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "float:Value"
+      }
+    ],
+    "Description": [
+      "Sets the second value of the nth entry in a perk&#39;s entry list. (type 2 only)"
+    ],
+    "Name": "SetNthPerkEntryValue2",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "perk"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Perk"
+      },
+      {
+        "type": "int:Index"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "string:Value"
+      }
+    ],
+    "Description": [
+      "Returns the string associated to the nth entry in a perk&#39;s entry list. (&quot;Activate Prompt&quot; for type 4)"
+    ],
+    "Name": "GetNthPerkEntryString",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "perk"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Recipe"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:RecipeCategory"
+      }
+    ],
+    "Description": [
+      "Returns the category of a recipe form."
+    ],
+    "Name": "GetRecipeCategory",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Recipe"
+      },
+      {
+        "type": "ref:RecipeCategory"
+      }
+    ],
+    "Description": [
+      "Sets the category of a recipe form."
+    ],
+    "Name": "SetRecipeCategory",
+    "Version": "10.0",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Recipe"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:RecipeCategory"
+      }
+    ],
+    "Description": [
+      "Returns the subcategory of a recipe form."
+    ],
+    "Name": "GetRecipeSubcategory",
+    "Version": "10.0",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Recipe"
+      },
+      {
+        "type": "ref:RecipeCategory"
+      }
+    ],
+    "Description": [
+      "Sets the subcategory of a recipe form."
+    ],
+    "Name": "SetRecipeSubcategory",
+    "Version": "10.0",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Item"
+      },
+      {
+        "type": "ref:FilterCategory",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array:Recipes"
+      }
+    ],
+    "Description": [
+      "Returns an array of recipes that use a given item."
+    ],
+    "Name": "GetFormRecipes",
+    "Version": "10.0",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Item"
+      },
+      {
+        "type": "ref:FilterCategory",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array:Items"
+      }
+    ],
+    "Description": [
+      "Returns an array of items that can be made using a given item."
+    ],
+    "Name": "GetFormRecipeOutputs",
+    "Version": "10.0",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:SettingName"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:Value"
+      }
+    ],
+    "Description": [
+      "Returns the value of a string game setting (for real)."
+    ],
+    "Name": "GetStringSetting",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "string"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:SettingName"
+      },
+      {
+        "type": "string:Value"
+      }
+    ],
+    "Description": [
+      "Sets the value of a string game setting (for real)."
+    ],
+    "Name": "SetStringSetting",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "string"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "ref:Quest"
+      }
+    ],
+    "Description": [
+      "Returns the player&#39;s active quest."
+    ],
+    "Name": "GetActiveQuest",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "string"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:NewLink"
+      }
+    ],
+    "Description": [
+      "Sets a reference&#39;s linked reference. [Currently cannot be used to add a linked ref where one does not previously exist.]"
+    ],
+    "Name": "SetLinkedRef",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "string",
+      "reference"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:NewBaseForm"
+      }
+    ],
+    "Description": [
+      "Sets the base form of a reference to another form of the same type. [Cannot be used on NPCs or Creatures.]"
+    ],
+    "Name": "SetBaseForm",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "reference"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Worldspace"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:Worldspace"
+      }
+    ],
+    "Description": [
+      "Sets a reference&#39;s linked reference. [Currently cannot be used to add a linked ref where one does not previously exist.]"
+    ],
+    "Name": "GetWorldspaceParentWorldspace",
+    "Alias": "GetWorldParentWorld",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "reference"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "int:ArmorClass"
+      }
+    ],
+    "Description": [
+      "Returns the class of the UpperBody armor worn by an actor. [This function can also be used as a condition.]"
+    ],
+    "Name": "GetArmorClass",
+    "ReferenceType": "actor",
+    "Version": "11.0",
+    "Condition": "True",
+    "Convention": "R",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "bool:InList"
+      }
+    ],
+    "Description": [
+      "Returns whether or not an actor&#39;s race is in a form list. [This function can also be used as a condition.]"
+    ],
+    "Name": "IsRaceInList",
+    "ReferenceType": "actor",
+    "Version": "11.0",
+    "Condition": "True",
+    "Convention": "R",
+    "Tags": [
+      "npc",
+      "actor"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Activator"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:RadioTalkingActivator"
+      }
+    ],
+    "Description": [
+      "Returns the radio station (Talking Activator) attached to an activator form."
+    ],
+    "Name": "GetActivatorRadioStation",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "radio"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Activator"
+      },
+      {
+        "type": "ref:RadioTalkingActivator"
+      }
+    ],
+    "Description": [
+      "Sets the radio station (Talking Activator) attached to an activator form."
+    ],
+    "Name": "SetActivatorRadioStation",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "radio"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Activator"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:RadioTalkingActivator"
+      }
+    ],
+    "Description": [
+      "Returns the activation prompt of an activator form."
+    ],
+    "Name": "GetActivatorPrompt",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Activator"
+      },
+      {
+        "type": "string:Prompt"
+      }
+    ],
+    "Description": [
+      "Returns the activation prompt of an activator form."
+    ],
+    "Name": "SetActivatorPrompt",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Activator"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:WaterType"
+      }
+    ],
+    "Description": [
+      "Returns the water type of an activator."
+    ],
+    "Name": "GetActivatorWaterType",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:WaterType"
+      },
+      {
+        "type": "ref:Activator"
+      }
+    ],
+    "Description": [
+      "Sets the water type of an activator."
+    ],
+    "Name": "SetActivatorWaterType",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Activator",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:ParentOnly"
+      }
+    ],
+    "Description": [
+      "Returns whether or not a ref is only activated through its activate-parents."
+    ],
+    "Name": "IsParentActivateOnly",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "reference"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LockedObject"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:LockedStateLevel",
+        "value": "0-3"
+      }
+    ],
+    "Description": [
+      "Returns the lock level of a terminal&#39;s base form regardless of locked state."
+    ],
+    "Name": "GetTerminalLock",
+    "ReferenceType": "terminal",
+    "Version": "9.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "Lutana",
+      "lock"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:PluginName"
+      },
+      {
+        "type": "string:HexFormID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:AnyForm"
+      }
+    ],
+    "Description": [
+      "Use instead of [BuildRef]."
+    ],
+    "Name": "GetFormFromMod",
+    "Alias": "GFFM",
+    "Version": "11.0",
+    "Condition": "False",
+    "Convention": "B",
+    "FromPlugin": "Lutana NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:FileName",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array:SectionNames"
+      }
+    ],
+    "Description": [
+      "Returns an array containing the names of all sections in an INI file.",
+      "INI files are read from and written to in the Data\\config\\ folder (as in MCM&#39;s INI functions). Format Example",
+      "If no filename is specified, the name of the mod the function is called from is used. Subdirectories can be defined in the path, e.g. &quot;subDir\\nameOfFile&quot;",
+      "Writing to an INI file that does not exist will create it along with any non-existent subdirectories in its path.",
+      "A keystring is a string containing both the section and key in the format: &quot;Section:Key&quot; (&#39;\\&#39; and &#39;/&#39; may also be used as the delimiter.)"
+    ],
+    "Name": "GetINISectionNames",
+    "Version": "11.0",
+    "Convention": "B",
+    "Tags": [
+      "ini",
+      "config"
+    ],
+    "FromPlugin": "Lutana NVSE"
+  }
+]

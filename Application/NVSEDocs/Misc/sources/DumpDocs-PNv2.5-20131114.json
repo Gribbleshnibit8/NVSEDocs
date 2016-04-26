@@ -1,0 +1,154 @@
+{
+	"PN_GetProjectileExplosion": {
+		"Name": "PN_GetProjectileExplosion",
+		"Alias": "none",
+		"NumParameters": "1",
+		"Parameters": [
+			{"url": "", "type": "item:ObjectID", "optional": "true"}
+		],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Returns explosion of projectile."
+		],
+		"Tags": []
+	},
+
+	"PN_GetExplosionDamage": {
+		"Name": "PN_GetExplosionDamage",
+		"Alias": "none",
+		"NumParameters": "1",
+		"Parameters": [
+			{"url": "", "type": "item:ObjectID", "optional": "true"}
+		],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Returns damage of explosion."
+		],
+		"Tags": []
+	},
+
+	"PN_GetExplosionForce": {
+		"Name": "PN_GetExplosionForce",
+		"Alias": "none",
+		"NumParameters": "1",
+		"Parameters": [
+			{"url": "", "type": "item:ObjectID", "optional": "true"}
+		],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Returns force of explosion."
+		],
+		"Tags": []
+	},
+
+	"PN_SetExplosionDamage": {
+		"Name": "PN_SetExplosionDamage",
+		"Alias": "none",
+		"NumParameters": "2",
+		"Parameters": [
+			{"url": "", "type": "float:Float", "optional": "false"},
+			{"url": "", "type": "item:ObjectID", "optional": "true"}
+		],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Sets damage of explosion."
+		],
+		"Tags": []
+	},
+
+	"PN_SetExplosionForce": {
+		"Name": "PN_SetExplosionForce",
+		"Alias": "none",
+		"NumParameters": "2",
+		"Parameters": [
+			{"url": "", "type": "float:Float", "optional": "false"},
+			{"url": "", "type": "item:ObjectID", "optional": "true"}
+		],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Sets force of explosion."
+		],
+		"Tags": []
+	},
+
+	"PN_ListClear": {
+		"Name": "PN_ListClear",
+		"Alias": "none",
+		"NumParameters": "1",
+		"Parameters": [
+			{"url": "", "type": "form list:FormList", "optional": "false"}
+		],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Deletes all elements in the list."
+		],
+		"Tags": []
+	},
+
+	"PN_GetActorBaseFlagsLow": {
+		"Name": "PN_GetActorBaseFlagsLow",
+		"Alias": "none",
+		"NumParameters": "1",
+		"Parameters": [
+			{"url": "", "type": "actor base:ActorBase", "optional": "true"}
+		],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Fixed function."
+		],
+		"Tags": []
+	},
+
+	"PN_SetConditionDamagePenalty": {
+		"Name": "PN_SetConditionDamagePenalty",
+		"Alias": "none",
+		"NumParameters": "1",
+		"Parameters": [
+			{"url": "", "type": "float:Float", "optional": "false"}
+		],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Set the condition damage penalty."
+		],
+		"Tags": []
+	},
+
+	"PN_GetConditionDamagePenalty": {
+		"Name": "PN_GetConditionDamagePenalty",
+		"Alias": "none",
+		"NumParameters": "0",
+		"Parameters": [],
+		"ReturnType": [],
+		"Version": "Unknown",
+		"Condition": "No",
+		"Convention": "",
+		"Description": [
+			"Get the condition damage penalty."
+		],
+		"Tags": []
+	}
+}

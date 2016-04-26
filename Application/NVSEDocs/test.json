@@ -1,0 +1,18 @@
+[
+  {
+    "Description": [
+      "Test"
+    ],
+    "Examples": [
+      {
+        "Example": [
+          "InjectUIComponent \"HUDMainMenu\" \"<_Var1>%g</_Var1> <text name=%qTestText%q> <_Var2> <copy src=\"parent()\" trait=\"_Var1\"/> </_Var2> </text>\" intVar",
+          ""
+        ]
+      }
+    ],
+    "Name": "test",
+    "Condition": "False",
+    "Convention": "E"
+  }
+]

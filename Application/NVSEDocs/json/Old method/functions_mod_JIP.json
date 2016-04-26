@@ -1,0 +1,4067 @@
+[
+  {
+    "Parameters": [
+      {
+        "type": "bool:Persistent"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:Persistent"
+      }
+    ],
+    "Description": [
+      "Sets/removes the persistent flag on passed reference."
+    ],
+    "Name": "SetPersistent",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "R",
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:BaseForm",
+        "optional": "True"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:BaseForm"
+      }
+    ],
+    "Description": [
+      "Returns an actor&#39;s template."
+    ],
+    "Name": "GetActorTemplate",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "actor",
+      "npc"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "ref:BaseForm"
+      }
+    ],
+    "Description": [
+      "Returns a leveled actor&#39;s actual, root base form."
+    ],
+    "Name": "GetLeveledActorBase",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "actor",
+      "npc"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:BaseForm",
+        "optional": "True"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Damage"
+      }
+    ],
+    "Description": [
+      "Returns a creature&#39;s melee attack damage (note that this attribute is only applicable to creatures that are unarmed and attack using parts of their skeleton)."
+    ],
+    "Name": "GetCreatureDamage",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "actor",
+      "npc"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "int:Damage"
+      },
+      {
+        "type": "ref:BaseForm",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Damage"
+      }
+    ],
+    "Description": [
+      "Sets a creature&#39;s melee attack damage."
+    ],
+    "Name": "SetCreatureDamage",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "actor",
+      "npc"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "bool:Poisoned"
+      }
+    ],
+    "Description": [
+      "Returns 1 if the actor is under the influence of a poison-type effect."
+    ],
+    "Name": "GetIsPoisoned",
+    "Version": "1.0",
+    "Condition": "True",
+    "Convention": "R",
+    "Tags": [
+      "actor",
+      "npc"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:InventoryObjectOrFormList"
+      },
+      {
+        "type": "int:Quantity"
+      },
+      {
+        "type": "float:Condition",
+        "optional": "True",
+        "value": "0-100"
+      }
+    ],
+    "Description": [
+      "Same as AddItem, but without causing the infamous invisible weapon glitch when used on other actors."
+    ],
+    "Name": "AddItemAlt ",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:InventoryObject",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Value"
+      }
+    ],
+    "Description": [
+      "Same as GetValue, but also works on ingestible-type items."
+    ],
+    "Name": "GetValueAlt",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Ammo",
+        "optional": "true"
+      },
+      {
+        "url": "Ammo_Trait_ID",
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of an ammo type&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "GetAmmoTraitNumeric",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Ammo",
+        "optional": "true"
+      },
+      {
+        "url": "Ammo_Trait_ID",
+        "type": "int:TraitID"
+      },
+      {
+        "type": "float:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of an ammo type&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "SetAmmoTraitNumeric",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Ammo"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:Projectile"
+      }
+    ],
+    "Description": [
+      "Returns an ammo type&#39;s projectile."
+    ],
+    "Name": "GetAmmoProjectile",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Ammo"
+      },
+      {
+        "type": "ref:Projectile"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:Projectile"
+      }
+    ],
+    "Description": [
+      "Sets an ammo type&#39;s projectile."
+    ],
+    "Name": "SetAmmoProjectile",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Ammo"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Effects"
+      }
+    ],
+    "Description": [
+      "Returns an ammo type&#39;s number of ammo effects."
+    ],
+    "Name": "GetNumAmmoEffects",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Ammo"
+      },
+      {
+        "type": "int:EffectIndex"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:AmmoEffect"
+      }
+    ],
+    "Description": [
+      "Returns an ammo type&#39;s nth ammo effect."
+    ],
+    "Name": "GetNthAmmoEffect",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Ammo"
+      },
+      {
+        "type": "ref:AmmoEffect"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:Successful"
+      }
+    ],
+    "Description": [
+      "Adds an ammo effect to an ammo type."
+    ],
+    "Name": "AddAmmoEffect",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Ammo"
+      },
+      {
+        "type": "ref:AmmoEffect"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:Successful"
+      }
+    ],
+    "Description": [
+      "Removes an ammo effect from an ammo type."
+    ],
+    "Name": "RemoveAmmoEffect",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:AmmoEffect"
+      },
+      {
+        "url": "Ammo_Flags",
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Ammo_Flags",
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of an ammo effect&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "GetAmmoEffectTraitNumeric",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "ammo"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:AmmoEffect"
+      },
+      {
+        "url": "Ammo_Flags",
+        "type": "int:TraitID"
+      },
+      {
+        "type": "float:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Ammo_Flags",
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of an ammo effect&#39;s numeric trait (determined by traitID)."
+    ],
+    "Examples": [
+      {
+        "Example": [
+          "; Makes someAmmoEffect reduce spread by 20%",
+          "SetAmmoEffectTraitNumeric someAmmoEffect 0 3 ; Sets Type (0) to Spread Mod (3)",
+          "SetAmmoEffectTraitNumeric someAmmoEffect 1 1 ; Sets Operation (1) to Multiply (1)",
+          "SetAmmoEffectTraitNumeric someAmmoEffect 2 0.8 ; Sets Value (2) to 0.8"
+        ]
+      }
+    ],
+    "Name": "SetAmmoEffectTraitNumeric",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "ammo"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Projectile"
+      },
+      {
+        "url": "Projectile_Flags",
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Projectile_Flags",
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of a projectile&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "GetProjectileTraitNumeric",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "ammo",
+      "projectile"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Projectile"
+      },
+      {
+        "url": "Projectile_Flags",
+        "type": "int:TraitID"
+      },
+      {
+        "type": "float:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Projectile_Flags",
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a projectile&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "SetProjectileTraitNumeric",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "ammo",
+      "projectile"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Projectile"
+      },
+      {
+        "url": "Projectile_Flags",
+        "type": "int:FlagID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Projectile_Flags",
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Returns a projectile&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "GetProjectileFlag",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "ammo",
+      "projectile"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Projectile"
+      },
+      {
+        "url": "Projectile_Flags",
+        "type": "int:FlagID"
+      },
+      {
+        "type": "bool:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Projectile_Flags",
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Sets a projectile&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "SetProjectileFlag",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "ammo",
+      "projectile"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Projectile"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Projectile_Flags",
+        "type": "ref:Explosion"
+      }
+    ],
+    "Description": [
+      "Returns a projectile&#39;s explosion (if any)."
+    ],
+    "Name": "GetProjectileExplosion",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "ammo",
+      "projectile"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Projectile"
+      },
+      {
+        "type": "ref:Explosion"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Projectile_Flags",
+        "type": "ref:Explosion"
+      }
+    ],
+    "Description": [
+      "Sets a projectile&#39;s explosion."
+    ],
+    "Name": "SetProjectileExplosion",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "ammo",
+      "projectile"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Explosion"
+      },
+      {
+        "url": "Explosion_Flags",
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Explosion_Flags",
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of an explosion&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "GetExplosionTraitNumeric",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "explosion"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Explosion"
+      },
+      {
+        "url": "Explosion_Flags",
+        "type": "int:TraitID"
+      },
+      {
+        "type": "float:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Explosion_Flags",
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of an explosion&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "SetExplosionTraitNumeric",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "explosion"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Explosion"
+      },
+      {
+        "url": "Explosion_Flags",
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Explosion_Flags",
+        "type": "ref:TraitForm"
+      }
+    ],
+    "Description": [
+      "Returns the value of an explosion&#39;s form-type trait (determined by traitID)."
+    ],
+    "Name": "GetExplosionTraitForm",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "explosion"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Explosion"
+      },
+      {
+        "url": "Explosion_Flags",
+        "type": "int:TraitID"
+      },
+      {
+        "type": "ref:NewForm"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Explosion_Flags",
+        "type": "ref:TraitForm"
+      }
+    ],
+    "Description": [
+      "Sets the value of an explosion&#39;s form-type trait (determined by traitID)."
+    ],
+    "Name": "SetExplosionTraitForm",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "explosion"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Explosion"
+      },
+      {
+        "url": "Explosion_Flags",
+        "type": "int:FlagID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Explosion_Flags",
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Returns an explosion&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "GetExplosionFlag",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "explosion"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Explosion"
+      },
+      {
+        "url": "Explosion_Flags",
+        "type": "int:FlagID"
+      },
+      {
+        "type": "bool:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Explosion_Flags",
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Returns an explosion&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "SetExplosionFlag",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "explosion"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:VarName"
+      },
+      {
+        "type": "ref:Quest",
+        "optional": "true"
+      }
+    ],
+    "Description": [
+      "Adds a new variable to either an object script (when called on an object reference), or a quest script (when called on a quest). The new variable has no explicit type, and can store both numeric (float) values and references. For retrieving/setting the value of the new variable, use any of the Get/Set(Ref)Variable functions.",
+      "The new variable remains valid only for the duration of the current game-session, and is lost when the game is restarted."
+    ],
+    "Name": "AddScriptVariable ",
+    "Version": "1.0",
+    "Convention": "E",
+    "Tags": [
+      "script",
+      "variable"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Quest"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "float:Seconds"
+      }
+    ],
+    "Description": [
+      "Returns the time remaining until the next iteration of the quest&#39;s script."
+    ],
+    "Name": "GetDelayElapsed",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "script",
+      "variable"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Quest"
+      },
+      {
+        "type": "float:Seconds"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "float:Seconds"
+      }
+    ],
+    "Description": [
+      "Sets the time remaining until the next iteration of the quest&#39;s script. This temporarily overrides the script&#39;s processing delay; A value of 0 means the script will be re-processed immediately in the next frame."
+    ],
+    "Name": "SetDelayElapsed",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "script"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Package"
+      },
+      {
+        "url": "Package_Flags",
+        "type": "int:FlagID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Package_Flags",
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Returns an AI package&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "GetPackageFlag",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "AI",
+      "package",
+      "npc"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Package"
+      },
+      {
+        "url": "Package_Flags",
+        "type": "int:FlagID"
+      },
+      {
+        "type": "bool:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": "Package_Flags",
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Sets an AI package&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "SetPackageFlag ",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "AI",
+      "package",
+      "npc"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Global"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "float:Value"
+      }
+    ],
+    "Description": [
+      "Returns the value of a global variable."
+    ],
+    "Name": "GetGlobalVariable ",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "global",
+      "variable",
+      "script"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Global"
+      },
+      {
+        "type": "float:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "float:Value"
+      }
+    ],
+    "Description": [
+      "Sets the value of a global variable."
+    ],
+    "Name": "SetGlobalVariable ",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "global",
+      "variable",
+      "script"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Faction"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "ref:Reputation"
+      }
+    ],
+    "Description": [
+      "Returns a faction&#39;s reputation type."
+    ],
+    "Name": "GetFactionReputationType",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "faction"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Faction"
+      },
+      {
+        "type": "ref:Reputation"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "ref:Reputation"
+      }
+    ],
+    "Description": [
+      "Sets a faction&#39;s reputation type."
+    ],
+    "Name": "SetFactionReputationType",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "faction"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:BaseForm",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "string:RefString"
+      }
+    ],
+    "Description": [
+      "Generates a unique identifier string for a reference/object. The result string is intended to be used as a key in StringMap-type arrays. This makes up for the inability to use references as keys in arrays.",
+      "Note that the generated identifier is load-order-independent, and remains valid even if the load order was changed."
+    ],
+    "Examples": [
+      {
+        "Example": [
+          "let arrVar[objRef.RefToString] := Caps001",
+          "let refVar := arrVar[objRef.RefToString]",
+          "let strVar := objRef.RefToString",
+          "let intVar := arrVar[strVar]",
+          ""
+        ]
+      },
+      {
+        "Example": [
+          "; To get the base form of a reference, use base notation",
+          "let strVar := RefToString objRef",
+          "",
+          "; To get convert just the reference, use reference notation",
+          "let strVar := objRef.RefToString",
+          ""
+        ]
+      }
+    ],
+    "Name": "RefToString",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "script",
+      "string"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:RefString"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "ref:AnyForm"
+      }
+    ],
+    "Description": [
+      "Rebuilds a reference from a string generated by RefToString."
+    ],
+    "Name": "StringToRef",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "script",
+      "string"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "axis:X/Y/Z"
+      },
+      {
+        "type": "ref:BaseForm",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "float:Dimension"
+      }
+    ],
+    "Description": [
+      "Returns either the length(X), width(Y) or height(Z) (in game units) of a physical game-object. This corresponds to the dimensions of the bounding-box encapsulating the object, in the GECK."
+    ],
+    "Name": "GetObjectDimensions",
+    "Version": "1.0",
+    "Convention": "E",
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:BaseForm",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "bool:IsItem"
+      }
+    ],
+    "Description": [
+      "Returns 1 if the passed object is an inventory item."
+    ],
+    "Name": "GetIsItem",
+    "Version": "1.0",
+    "Convention": "E",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "float:Value1"
+      },
+      {
+        "type": "float:Value2"
+      },
+      {
+        "type": "float:Value3",
+        "optional": "true"
+      },
+      {
+        "type": "float:Value4",
+        "optional": "true"
+      },
+      {
+        "type": "float:Value5",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "float:Minimal"
+      }
+    ],
+    "Description": [
+      "Returns the minimal out of up to five passed values."
+    ],
+    "Name": "GetMinOf",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "math"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "float:Value1"
+      },
+      {
+        "type": "float:Value2"
+      },
+      {
+        "type": "float:Value3",
+        "optional": "true"
+      },
+      {
+        "type": "float:Value4",
+        "optional": "true"
+      },
+      {
+        "type": "float:Value5",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "float:Maximal"
+      }
+    ],
+    "Description": [
+      "Returns the maximal out of up to five passed values."
+    ],
+    "Name": "GetMaxOf",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "math"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:ComponentPath"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "bool:Loaded"
+      }
+    ],
+    "Description": [
+      "Returns 1 if the UI component (which can be either a menu, an object-element, or a property-element) is currently loaded in memory."
+    ],
+    "Examples": [
+      {
+        "Example": [
+          "sComponentLoaded \"InventoryMenu\\GLOW_BRANCH\\IM_HotKeyWheel\"",
+          "IsComponentLoaded \"HUDMainMenu\\XPMeter\\XPPointer\\_x_min\"",
+          "IsComponentLoaded \"StartMenu\"",
+          ""
+        ]
+      }
+    ],
+    "Name": "IsComponentLoaded",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "UI",
+      "Interface"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:ComponentPath"
+      },
+      {
+        "type": "string:FilePath"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "bool:Successful"
+      }
+    ],
+    "Description": [
+      "Injects the contents of an XML file into a menu, at componentPath; filePath is relative to the game&#39;s installation path; The XML file can either be loose, or packed in a BSA archive.",
+      "* The new components are injected directly into the game&#39;s memory - no files on disk are modified (or even accessed).",
+      "* Once injected, all UI functions can be used on the new components.",
+      "* Most menus are _loaded in memory only while open_, and are _unloaded when closed_. This means: a) new components will be injected successfully only if the target menu is currently loaded, and b) new components must be re-injected every time the target menu is re-loaded. The only exceptions are the following menus, which are always loaded (and are never re-loaded): HUDMainMenu, InventoryMenu, MapMenu, RepairMenu, StatsMenu, ItemModMenu."
+    ],
+    "Examples": [
+      {
+        "Example": [
+          "InjectUIXML \"HUDMainMenu\" \"data\\menus\\prefabs\\list_box.xml\"",
+          "InjectUIXML \"StartMenu\\NOGLOW_BRANCH\\main_container\" \"data\\menus\\my_file.xml\"",
+          ""
+        ]
+      }
+    ],
+    "Name": "InjectUIXML",
+    "Version": "1.0",
+    "Convention": "B",
+    "Tags": [
+      "UI",
+      "Interface"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:ComponentPath"
+      },
+      {
+        "type": "string:ComponentString"
+      },
+      {
+        "type": "string:FormatVar1",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar2",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar3",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar4",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar5",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar6",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar7",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar8",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar9",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar10",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar11",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar12",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar13",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar14",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar15",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar16",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar17",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar18",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar19",
+        "optional": "true"
+      },
+      {
+        "type": "string:FormatVar20",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "url": " ",
+        "type": "bool:Successful"
+      }
+    ],
+    "Description": [
+      "Injects the contents of a string into a menu, at componentPath; componentString supports format specifiers, and up to 20 variables may be used.",
+      "* The new components are injected directly into the game&#39;s memory - no files on disk are modified (or even accessed).",
+      "* Once injected, all UI functions can be used on the new components.",
+      "* Most menus are _loaded in memory only while open_, and are _unloaded when closed_. This means: a) new components will be injected successfully only if the target menu is currently loaded, and b) new components must be re-injected every time the target menu is re-loaded. The only exceptions are the following menus, which are always loaded (and are never re-loaded): HUDMainMenu, InventoryMenu, MapMenu, RepairMenu, StatsMenu, ItemModMenu."
+    ],
+    "Examples": [
+      {
+        "Example": [
+          "InjectUIComponent \"HUDMainMenu\" \"<_Var1>%g</_Var1> <text name=%qTestText%q> <_Var2> <copy src=%qparent()%q trait=%q_Var1%q/> </_Var2> </text>\" intVar",
+          "InjectUIComponent \"StartMenu\\NOGLOW_BRANCH\" \"<rect name=%qTestRect%q> <image name=%qTestImage%q> <text name=%q%z%q> </text> </image> </rect>\" strVar"
+        ]
+      }
+    ],
+    "Name": "InjectUIComponent",
+    "Version": "1.0",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "UI",
+      "Interface"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:FilePath"
+      },
+      {
+        "type": "bool:Append"
+      },
+      {
+        "type": "var:FormatVar1",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar2",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar3",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar4",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar5"
+      },
+      {
+        "type": "var:FormatVar6",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar7",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar8",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar9",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar10",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar11",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar12",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar13",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar14",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar15",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar16",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar17",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar18",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar19",
+        "optional": "true"
+      },
+      {
+        "type": "var:FormatVar20",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:Successful"
+      }
+    ],
+    "Description": [
+      "Similar to WriteStringToFile, only this function writes a string into a file. If the file does not exist, it is created; If append is non-zero, the new string is appended at the end of the file, otherwise all existing data is erased and overwritten; sourceString supports format specifiers, and up to 20 variables may be used."
+    ],
+    "Examples": [
+      {
+        "Example": [
+          "WriteStringToFile filePath:String, append:Bool, sourceString:String, formatStringVar1, ... , formatStringVar20"
+        ]
+      }
+    ],
+    "Name": "WriteStringToFile",
+    "Convention": "B",
+    "Tags": [
+      "string",
+      "file",
+      "INI"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:FilePath"
+      },
+      {
+        "type": "bool:Append"
+      },
+      {
+        "type": "array_var:SourceArray"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:Successful"
+      }
+    ],
+    "Description": [
+      "Similar to ReadArrayFromFile, only this function writes data from an array variable into a file. If the file does not exist, it is created; If append is non-zero, the new data is appended to any existing data in the file, otherwise all existing data is erased and overwritten."
+    ],
+    "Examples": [
+      {
+        "Example": [
+          "(null) WriteArrayToFile filePath:String, append:Bool, sourceArray:Array_var"
+        ]
+      }
+    ],
+    "Name": "WriteArrayToFile",
+    "Version": "3",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "array",
+      "file",
+      "string",
+      "INI"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Class"
+      },
+      {
+        "url": "Class_Codes",
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of a class&#39; numeric trait (determined by traitID)."
+    ],
+    "Name": "GetClassTraitNumeric",
+    "Version": "3",
+    "Convention": "B",
+    "Tags": [
+      "class"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Class"
+      },
+      {
+        "url": "Class_Codes",
+        "type": "int:TraitID"
+      },
+      {
+        "type": "int:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a class&#39; numeric trait (determined by traitID)."
+    ],
+    "Name": "SetClassTraitNumeric",
+    "Version": "3",
+    "Convention": "B",
+    "Tags": [
+      "class"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Class"
+      },
+      {
+        "url": "Class_Codes",
+        "type": "int:FlagID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Returns a class&#39; flag value (determined by flagID)."
+    ],
+    "Name": "GetClassFlag",
+    "Version": "3",
+    "Convention": "B",
+    "Tags": [
+      "class"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Class"
+      },
+      {
+        "url": "Class_Codes",
+        "type": "int:FlagID"
+      },
+      {
+        "type": "bool:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Sets a class&#39; flag value (determined by flagID)."
+    ],
+    "Name": "SetClassFlag",
+    "Version": "3",
+    "Convention": "B",
+    "Tags": [
+      "class"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Light"
+      },
+      {
+        "url": "Light_Codes",
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of a light&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "GetLightTraitNumeric",
+    "Version": "3",
+    "Convention": "B",
+    "Tags": [
+      "light"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Light"
+      },
+      {
+        "url": "Light_Codes",
+        "type": "int:TraitID"
+      },
+      {
+        "type": "float:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a light&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "SetLightTraitNumeric",
+    "Version": "3",
+    "Convention": "B",
+    "Tags": [
+      "light"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Light"
+      },
+      {
+        "url": "Light_Codes",
+        "type": "int:FlagID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Returns a light&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "GetLightFlag",
+    "Version": "2",
+    "Convention": "B",
+    "Tags": [
+      "light"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Light"
+      },
+      {
+        "url": "Light_Codes",
+        "type": "int:FlagID"
+      },
+      {
+        "type": "bool:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Sets a light&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "SetLightFlag",
+    "Version": "3",
+    "Convention": "B",
+    "Tags": [
+      "light"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Sound"
+      },
+      {
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of a sound&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "GetSoundTraitNumeric",
+    "Version": "3",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "sound"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Sound"
+      },
+      {
+        "type": "int:TraitID"
+      },
+      {
+        "type": "float:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a sound&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "SetSoundTraitNumeric",
+    "Version": "3",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "sound"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Sound"
+      },
+      {
+        "type": "int:FlagID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Returns a sound&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "GetSoundFlag",
+    "Version": "3",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "sound"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Sound"
+      },
+      {
+        "type": "int:FlagID"
+      },
+      {
+        "type": "bool:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Sets a sound&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "SetSoundFlag",
+    "Version": "3",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "sound"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:FilePath"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "array_var:"
+      }
+    ],
+    "Description": [
+      "Reads data from the specified file (filePath is relative to the game&#39;s installation path) and stores it in an array variable. If the file contains a single line of data, the function returns a standard, list-type array. Otherwise, it returns a matrix, where the first index is the column number and the second index is the row number (someArray[column][row]).",
+      "The file must be formatted accordingly:",
+      "Values must be separated with tabs (one or more).",
+      "When using non-numeric types as values:",
+      "Strings must be prefixed with &#39;$&#39;. Example: $Brave men run, in my family.",
+      "References must be prefixed with &#39;@&#39;, followed by the source file name, then &#39;:&#39;, and finally the six-digit reference ID (i.e. without the mod index). Example (for Craig Boone): @FalloutNV.esm:096BCE"
+    ],
+    "Examples": [
+      {
+        "Example": [
+          "Example #1 (will return an array of numbers, with 7 elements):",
+          " ",
+          "496     -1.26   -12     0.514   0       2009    -100.8004"
+        ]
+      },
+      {
+        "Example": [
+          "Example #2 (will return an array of strings, with 4 elements):",
+          " ",
+          "$they can lie to my face        $but not to my heart    $if we all stand together       $it will just be the start"
+        ]
+      },
+      {
+        "Example": [
+          "Example #3 (will return an array of references, with 4 elements):",
+          " ",
+          "@FalloutNV.esm:135F19   @LonesomeRoad.esm:003E43        @DeadMoney.esm:00A7A9   @FalloutNV.esm:022108"
+        ]
+      },
+      {
+        "Example": [
+          "Example #4 (will return an array of mixed-type values, with 6 elements):",
+          " ",
+          "0.514   $if we all stand together       -12     @DeadMoney.esm:00A7A9   @FalloutNV.esm:135F19   $it will just be the start"
+        ]
+      },
+      {
+        "Example": [
+          "Example #5 (will return a matrix of numbers, with 4 columns and 5 rows):",
+          " ",
+          "52              14              7               9",
+          "110             2               20              51",
+          "10              99              0               61",
+          "-5              37              39              45",
+          "35              17              496             -12"
+        ]
+      },
+      {
+        "Example": [
+          "Example #6 (will return a matrix of mixed-type values, with 3 columns and 4 rows):",
+          " ",
+          "@FalloutNV.esm:135F19           496             $they can lie to my face",
+          "@LonesomeRoad.esm:003E43        -1.26           $but not to my heart",
+          "@DeadMoney.esm:00A7A9           -12             $if we all stand together",
+          "@FalloutNV.esm:022108           0.514           $it will just be the start"
+        ]
+      }
+    ],
+    "Name": "ReadArrayFromFile",
+    "Version": "3",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "array",
+      "file"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:FilePath"
+      },
+      {
+        "type": "int:StartAtLine",
+        "optional": "true"
+      },
+      {
+        "type": "int:LineCount",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:FileContents"
+      }
+    ],
+    "Description": [
+      "Reads the contents of the specified file (filePath is relative to the game&#39;s installation path) and stores them in a string variable. If startAtLine is specified, the file will be read beginning from that line number (otherwise, it will be read from line 1); If lineCount is specified, only that number of lines will be read."
+    ],
+    "Name": "ReadStringFromFile",
+    "Version": "2",
+    "Convention": "B",
+    "Tags": [
+      "file",
+      "string"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:CombatStyle"
+      },
+      {
+        "url": "Combat_Style_Flags",
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of a combat style&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "GetCombatStyleTraitNumeric",
+    "Version": "2",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "combat style"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:CombatStyle"
+      },
+      {
+        "url": "Combat_Style_Flags",
+        "type": "int:TraitID"
+      },
+      {
+        "type": "float:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a combat style&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "SetCombatStyleTraitNumeric",
+    "Version": "2",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "combat style"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:CombatStyle"
+      },
+      {
+        "url": "Combat_Style_Flags",
+        "type": "int:FlagID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Returns a combat style&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "GetCombatStyleFlag",
+    "Version": "2",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "combat style"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:Axis"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Pos"
+      }
+    ],
+    "Description": [
+      "Returns the current X/Y coordinate of the mouse cursor (in menu mode only)."
+    ],
+    "Name": "GetCursorPos",
+    "Version": "2",
+    "Convention": "B",
+    "Tags": [
+      "cursor"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:ComponentPath"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:"
+      }
+    ],
+    "Description": [
+      "Returns the string value of a property/variable element."
+    ],
+    "Name": "GetUIString",
+    "Version": "2",
+    "Convention": "B",
+    "Tags": [
+      "ui",
+      "string"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "array:Children"
+      }
+    ],
+    "Description": [
+      "Returns an array of all the references of which the calling reference is the enable parent."
+    ],
+    "Name": "GetEnableChildren",
+    "Version": "2",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "enable",
+      "linked",
+      "child",
+      "children",
+      "ref"
+    ],
+    "FromPlugin": "JIP"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "array_var:"
+      }
+    ],
+    "Description": [
+      "Returns an array of all the references that are linked to the calling reference."
+    ],
+    "Name": "GetLinkedChildren",
+    "Version": "2",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "child",
+      "children",
+      "linked",
+      "link",
+      "ref"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "array_var:FollowersList"
+      }
+    ],
+    "Description": [
+      "Returns an array of all the actors that are currently following the calling reference."
+    ],
+    "Name": "GetFollowers",
+    "Version": "2",
+    "Convention": "R",
+    "Tags": [
+      "follower",
+      "followers"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:RefLinkedTo"
+      }
+    ],
+    "Description": [
+      "Sets the calling reference&#39;s linked reference to objectRef or, if the latter is not provided, removes its current linked reference. Unfortunately, the changes are not saved with the game and this function must be called again when the game is restarted."
+    ],
+    "Name": "SetLinkedReference",
+    "ReferenceType": "refLinkedFrom",
+    "Version": "2",
+    "Convention": "R",
+    "Tags": [
+      "link",
+      "linked"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weapon"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:SoundLevel"
+      }
+    ],
+    "Description": [
+      "Returns a weapon&#39;s detection sound level.",
+      "Detection sound level:",
+      "0      Loud",
+      "1      Normal",
+      "2      Silent"
+    ],
+    "Name": "GetWeaponDetectionSoundLevel",
+    "Version": "4",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "weapon"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weapon"
+      },
+      {
+        "url": "Weapon_Codes",
+        "type": "int:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:SoundLevel"
+      }
+    ],
+    "Description": [
+      "Sets a weapon&#39;s detection sound level."
+    ],
+    "Name": "SetWeaponDetectionSoundLevel",
+    "Version": "4",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "weapon",
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "int:Silenced"
+      }
+    ],
+    "Description": [
+      "Checks whether the calling reference&#39;s equipped weapon is silenced.",
+      "Returns: ",
+      "0 if the weapon is not silenced, ",
+      "1 if the weapon is silenced by default, ",
+      "2 if the weapon has a silencer mod attached."
+    ],
+    "Name": "IsEquippedWeaponSilenced",
+    "Version": "4",
+    "Condition": "True",
+    "Convention": "R",
+    "Tags": [
+      "weapon"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "int:Scoped"
+      }
+    ],
+    "Description": [
+      "Checks whether the calling reference&#39;s equipped weapon is scoped. ",
+      "Returns: ",
+      "0 if the weapon is not scoped, ",
+      "1 if the weapon is scoped by default, ",
+      "2 if the weapon has a scope mod attached."
+    ],
+    "Name": "IsEquippedWeaponScoped",
+    "Version": "4",
+    "Condition": "True",
+    "Convention": "R",
+    "Tags": [
+      "weapon"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weapon"
+      },
+      {
+        "type": "int:SoundID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:Sound"
+      }
+    ],
+    "Description": [
+      "Returns a weapon&#39;s sound (determined by soundID).",
+      "Weapon sound IDs:",
+      "0      Attack Sound 3D",
+      "1      Attack Sound Dist.",
+      "2      Attack Sound 2D",
+      "3      Attack Loop",
+      "4      Attack Fail",
+      "5      Melee Block",
+      "6      Idle Sound",
+      "7      Equip Sound",
+      "8      Unequip Sound",
+      "9      Attack Sound 3D (Mod)",
+      "10    Attack Sound Dist. (Mod)",
+      "11    Attack Sound 2D (Mod)",
+      "12    Pickup Sound",
+      "13    Putdown Sound"
+    ],
+    "Name": "GetWeaponSound",
+    "Version": "4",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "weapon",
+      "sound"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weapon"
+      },
+      {
+        "url": "Weapon_Codes",
+        "type": "int:SoundID"
+      },
+      {
+        "type": "ref:NewSound"
+      }
+    ],
+    "Description": [
+      "Sets a weapon&#39;s sound (determined by soundID)."
+    ],
+    "Name": "SetWeaponSound",
+    "Version": "4",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "weapon",
+      "sound"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weapon"
+      },
+      {
+        "url": "Weapon_Codes",
+        "type": "int:ModIndex"
+      },
+      {
+        "type": "ref:NewItemMod"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:ItemMod"
+      }
+    ],
+    "Description": [
+      "Sets a weapon&#39;s mod form at the specified index."
+    ],
+    "Name": "SetWeaponItemMod",
+    "Version": "4",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "weapon",
+      "mod"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weapon"
+      },
+      {
+        "url": "Weapon_Codes",
+        "type": "int:ModIndex"
+      },
+      {
+        "type": "int:NewEffectID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:EffectID"
+      }
+    ],
+    "Description": [
+      "Sets a weapon&#39;s mod effect ID at the specified index."
+    ],
+    "Name": "SetWeaponItemModEffect",
+    "Version": "4",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "weapon",
+      "mod"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weapon"
+      },
+      {
+        "url": "Weapon_Codes",
+        "type": "int:ModIndex"
+      },
+      {
+        "type": "float:NewEffectValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:EffectValue"
+      }
+    ],
+    "Description": [
+      "Sets a weapon&#39;s mod effect value at the specified index."
+    ],
+    "Name": "SetWeaponItemModValue",
+    "Version": "4",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "weapon",
+      "mod"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weather"
+      },
+      {
+        "url": "Weather_and_Climate_Codes",
+        "type": "int:TimeID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:ImageSpaceMod"
+      }
+    ],
+    "Description": [
+      "Returns a weather&#39;s image space modifier at the specified timeID."
+    ],
+    "Name": "GetWeatherImageSpaceMod",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weather"
+      },
+      {
+        "type": "int:LayerIndex",
+        "value": "0-3"
+      },
+      {
+        "type": "string:TexturePath"
+      }
+    ],
+    "Description": [
+      "Sets the texture path of a weather&#39;s layer.",
+      "layerIndex(0-3):Int"
+    ],
+    "Name": "SetWeatherTexture",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weather"
+      },
+      {
+        "type": "int:LayerIndex",
+        "value": "0-3"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:TexturePath"
+      }
+    ],
+    "Description": [
+      "Returns the texture path of a weather&#39;s layer.",
+      "layerIndex(0-3):Int"
+    ],
+    "Name": "GetWeatherTexture",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weather"
+      },
+      {
+        "url": "Weather_and_Climate_Codes",
+        "type": "int:TimeID"
+      },
+      {
+        "type": "ref:NewImageSpaceMod"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:ImageSpaceMod"
+      }
+    ],
+    "Description": [
+      "Sets a weather&#39;s image space modifier at the specified timeID."
+    ],
+    "Name": "SetWeatherImageSpaceMod",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weather"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:ModelPath"
+      }
+    ],
+    "Description": [
+      "Returns a weather&#39;s precipitation model path."
+    ],
+    "Name": "GetWeatherPrecipitationModel",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weather"
+      },
+      {
+        "type": "string:ModelPath"
+      }
+    ],
+    "Description": [
+      "Sets a weather&#39;s precipitation model path."
+    ],
+    "Name": "SetWeatherPrecipitationModel",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weather"
+      },
+      {
+        "url": "Weather_and_Climate_Codes",
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of a weather&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "GetWeatherTraitNumeric",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weather"
+      },
+      {
+        "url": "Weather_and_Climate_Codes",
+        "type": "int:TraitID"
+      },
+      {
+        "type": "float:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a weather&#39;s numeric trait (determined by traitID)."
+    ],
+    "Name": "SetWeatherTraitNumeric",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weather"
+      },
+      {
+        "type": "int:TypeID"
+      },
+      {
+        "type": "int:TimeID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Color"
+      }
+    ],
+    "Description": [
+      "Returns a weather&#39;s color (RRRGGGBBB) of the specified type\\time.",
+      "Weather type IDs:",
+      "0      Sky-Upper",
+      "1      Fog",
+      "2      Clouds-Lower",
+      "3      Ambient",
+      "4      Sunlight",
+      "5      Sun",
+      "6      Stars",
+      "7      Sky-Lower",
+      "8      Horizon",
+      "9      Clouds-Upper"
+    ],
+    "Name": "GetWeatherRGBColor",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Weather"
+      },
+      {
+        "type": "int:TypeID"
+      },
+      {
+        "type": "int:TimeID"
+      },
+      {
+        "type": "int:NewColor"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Color"
+      }
+    ],
+    "Description": [
+      "Sets a weather&#39;s color (RRRGGGBBB) of the specified type\\time.",
+      "Weather type IDs:",
+      "0      Sky-Upper",
+      "1      Fog",
+      "2      Clouds-Lower",
+      "3      Ambient",
+      "4      Sunlight",
+      "5      Sun",
+      "6      Stars",
+      "7      Sky-Lower",
+      "8      Horizon",
+      "9      Clouds-Upper"
+    ],
+    "Name": "SetWeatherRGBColor",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:TexturePath"
+      }
+    ],
+    "Description": [
+      "Returns a climate&#39;s sun texture path."
+    ],
+    "Name": "GetClimateSunTexture",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      },
+      {
+        "type": "string:TexturePath"
+      }
+    ],
+    "Description": [
+      "Sets a climate&#39;s sun texture path."
+    ],
+    "Name": "SetClimateSunTexture",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:TexturePath"
+      }
+    ],
+    "Description": [
+      "Returns a climate&#39;s sun glare texture path."
+    ],
+    "Name": "GetClimateSunGlareTexture",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      },
+      {
+        "type": "string:TexturePath"
+      }
+    ],
+    "Description": [
+      "Sets a climate&#39;s sun glare texture path."
+    ],
+    "Name": "SetClimateSunGlareTexture",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:ModelPath"
+      }
+    ],
+    "Description": [
+      "Returns a climate&#39;s night sky model path."
+    ],
+    "Name": "GetClimateNightSkyModel",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      },
+      {
+        "type": "string:ModelPath"
+      }
+    ],
+    "Description": [
+      "Sets a climate&#39;s night sky model path."
+    ],
+    "Name": "SetClimateNightSkyModel",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      },
+      {
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of a climate&#39;s numeric trait (determined by traitID).",
+      "Climate numeric trait IDs:",
+      "0      Sunrise Begin (minutes)",
+      "1      Sunrise End (minutes)",
+      "2      Sunset Begin (minutes)",
+      "3      Sunset End (minutes)",
+      "4      Volatility",
+      "5      Moons (0 - None, 1 - Masser, 2 - Secunda, 3 - Both)",
+      "6      Phase Length (days)"
+    ],
+    "Name": "GetClimateTraitNumeric",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      },
+      {
+        "type": "int:TraitID"
+      },
+      {
+        "type": "int:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a climate&#39;s numeric trait (determined by traitID).",
+      "Climate numeric trait IDs:",
+      "0      Sunrise Begin (minutes)",
+      "1      Sunrise End (minutes)",
+      "2      Sunset Begin (minutes)",
+      "3      Sunset End (minutes)",
+      "4      Volatility",
+      "5      Moons (0 - None, 1 - Masser, 2 - Secunda, 3 - Both)",
+      "6      Phase Length (days)"
+    ],
+    "Name": "SetClimateTraitNumeric",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:WeatherTypes"
+      }
+    ],
+    "Description": [
+      "Returns a climate&#39;s number of weather types."
+    ],
+    "Name": "GetClimateNumWeatherTypes",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      },
+      {
+        "type": "int:WeatherIndex"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:Weather"
+      }
+    ],
+    "Description": [
+      "Returns a climate&#39;s nth weather type."
+    ],
+    "Name": "GetClimateNthWeatherType",
+    "Version": "4",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      },
+      {
+        "type": "int:WeatherIndex"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Chance"
+      }
+    ],
+    "Description": [
+      "Returns a climate&#39;s nth weather chance."
+    ],
+    "Name": "GetClimateNthWeatherChance",
+    "Version": "4",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      },
+      {
+        "type": "int:WeatherIndex"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:Global"
+      }
+    ],
+    "Description": [
+      "Returns a climate&#39;s nth weather global variable."
+    ],
+    "Name": "GetClimateNthWeatherGlobal",
+    "Version": "4",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      },
+      {
+        "type": "ref:Weather"
+      },
+      {
+        "type": "int:Chance"
+      },
+      {
+        "type": "ref:Global",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:Successful"
+      }
+    ],
+    "Description": [
+      "Adds a weather to a climate&#39;s weather types, with the specified chance and global variable (optional). If the weather is already in the list, sets its chance and global."
+    ],
+    "Name": "ClimateAddWeatherType",
+    "Version": "4",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Climate"
+      },
+      {
+        "type": "ref:Weather"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:Successful"
+      }
+    ],
+    "Description": [
+      "Removes a weather from a climate&#39;s weather types."
+    ],
+    "Name": "ClimateRemoveWeatherType",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "weather",
+      "climate"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LandTexture"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:TextureSet"
+      }
+    ],
+    "Description": [
+      "Returns a land texture&#39;s texture set."
+    ],
+    "Name": "GetLandTextureTextureSet",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LandTexture"
+      },
+      {
+        "type": "ref:NewTextureSet"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:TextureSet"
+      }
+    ],
+    "Description": [
+      "Sets a land texture&#39;s texture set."
+    ],
+    "Name": "SetLandTextureTextureSet",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LandTexture"
+      },
+      {
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of a land texture&#39;s numeric trait (determined by traitID).",
+      "Land texture numeric trait IDs:",
+      "0      Material Type",
+      "1      Friction",
+      "2      Restitution",
+      "3      Texture Specular Exponent"
+    ],
+    "Name": "GetLandTextureTraitNumeric",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LandTexture"
+      },
+      {
+        "type": "int:TraitID"
+      },
+      {
+        "type": "int:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a land texture&#39;s numeric trait (determined by traitID).",
+      "Land texture numeric trait IDs:",
+      "0      Material Type",
+      "1      Friction",
+      "2      Restitution",
+      "3      Texture Specular Exponent"
+    ],
+    "Name": "SetLandTextureTraitNumeric",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LandTexture"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Grasses"
+      }
+    ],
+    "Description": [
+      "Returns a land texture&#39;s number of potential grass types."
+    ],
+    "Name": "GetLandTextureNumGrasses",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LandTexture"
+      },
+      {
+        "type": "int:GrassIndex"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:Grass"
+      }
+    ],
+    "Description": [
+      "Returns a land texture&#39;s nth grass type."
+    ],
+    "Name": "GetLandTextureNthGrass",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LandTexture"
+      },
+      {
+        "type": "ref:Grass"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:Successful"
+      }
+    ],
+    "Description": [
+      "Adds a grass to a land texture&#39;s potential grass types."
+    ],
+    "Name": "LandTextureAddGrass",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:LandTexture"
+      },
+      {
+        "type": "ref:Grass"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:Successful"
+      }
+    ],
+    "Description": [
+      "Removes a grass from a land texture&#39;s potential grass types."
+    ],
+    "Name": "LandTextureRemoveGrass",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:TextureSet"
+      },
+      {
+        "type": "int:MapID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "string:TexturePath"
+      }
+    ],
+    "Description": [
+      "Returns the texture path of a texture-set&#39;s specified map.",
+      "Texture-set map IDs:",
+      "0      Diffuse",
+      "1      Normal/Gloss",
+      "2      Environment Mask",
+      "3      Glow/Skin/Hair",
+      "4      Height",
+      "5      Environment"
+    ],
+    "Name": "GetTextureSetTexture",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:TextureSet"
+      },
+      {
+        "type": "int:MapID"
+      },
+      {
+        "type": "string:TexturePath"
+      }
+    ],
+    "Description": [
+      "Sets the texture path of a texture-set&#39;s specified map.",
+      "Texture-set map IDs:",
+      "0      Diffuse",
+      "1      Normal/Gloss",
+      "2      Environment Mask",
+      "3      Glow/Skin/Hair",
+      "4      Height",
+      "5      Environment"
+    ],
+    "Name": "SetTextureSetTexture",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:TextureSet"
+      },
+      {
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of a texture-set&#39;s numeric trait (determined by traitID).",
+      "Texture-set numeric trait IDs:",
+      "0      Min. Width",
+      "1      Max. Width",
+      "2      Min. Height",
+      "3      Max. Height",
+      "4      Depth",
+      "5      Shininess",
+      "6      Parallax Scale",
+      "7      Parallax Passes",
+      "8      Color (RRRGGGBBB)"
+    ],
+    "Name": "GetTextureSetTraitNumeric",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:TextureSet"
+      },
+      {
+        "type": "int:TraitID"
+      },
+      {
+        "type": "float:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a texture-set&#39;s numeric trait (determined by traitID).",
+      "Texture-set numeric trait IDs:",
+      "0      Min. Width",
+      "1      Max. Width",
+      "2      Min. Height",
+      "3      Max. Height",
+      "4      Depth",
+      "5      Shininess",
+      "6      Parallax Scale",
+      "7      Parallax Passes",
+      "8      Color (RRRGGGBBB)"
+    ],
+    "Name": "SetTextureSetTraitNumeric",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:TextureSet"
+      },
+      {
+        "type": "int:FlagID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Returns a texture-set&#39;s flag value (determined by flagID).",
+      "Texture-set flag IDs:",
+      "0      No Specular Map",
+      "1      Parallax",
+      "2      Alpha - Blending",
+      "3      Alpha - Testing"
+    ],
+    "Name": "GetTextureSetFlag",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:TextureSet"
+      },
+      {
+        "type": "int:FlagID"
+      },
+      {
+        "type": "bool:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Sets a texture-set&#39;s flag value (determined by flagID).",
+      "Texture-set flag IDs:",
+      "0      No Specular Map",
+      "1      Parallax",
+      "2      Alpha - Blending",
+      "3      Alpha - Testing"
+    ],
+    "Name": "SetTextureSetFlag",
+    "Version": "4",
+    "Convention": "B",
+    "Tags": [
+      "texture"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "axis:X/Y/Z"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:Bound"
+      }
+    ],
+    "Description": [
+      "Returns the X/Y/Z bound of the primitive of the calling reference."
+    ],
+    "Name": "GetPrimitiveBound",
+    "Version": "5",
+    "Convention": "R",
+    "Tags": [
+      "primitive"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "axis:X/Y/Z"
+      },
+      {
+        "type": "float:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:Bound"
+      }
+    ],
+    "Description": [
+      "Sets the X/Y/Z bound of the primitive of the calling reference."
+    ],
+    "Name": "SetPrimitiveBound",
+    "Version": "5",
+    "Convention": "R",
+    "Tags": [
+      "primitive"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Form"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Effects"
+      }
+    ],
+    "Description": [
+      "Returns the number of effects of an ingestible/base effect/actor effect."
+    ],
+    "Name": "GetNumEffects",
+    "Version": "5",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "effect",
+      "effects"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Form"
+      },
+      {
+        "type": "int:EffectIndex"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:BaseEffect"
+      }
+    ],
+    "Description": [
+      "Returns the base effect of the nth effect of an ingestible/base effect/actor effect."
+    ],
+    "Name": "GetNthEffectBase",
+    "Version": "5",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "effect",
+      "effects"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Form"
+      },
+      {
+        "type": "int:EffectIndex"
+      },
+      {
+        "type": "int:TraitID"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:TraitValue"
+      }
+    ],
+    "Description": [
+      "Returns the value of a numeric trait (determined by traitID) of the nth effect of an ingestible/base effect/actor effect.",
+      "Effect numeric trait IDs:",
+      "0      Magnitude",
+      "1      Area",
+      "2      Duration",
+      "3      Range (0 - Self, 1 - Touch, 2 - Target)"
+    ],
+    "Name": "GetNthEffectTraitNumeric",
+    "Version": "5",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "effect",
+      "effects"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Form"
+      },
+      {
+        "type": "int:EffectIndex"
+      },
+      {
+        "type": "int:TraitID"
+      },
+      {
+        "type": "int:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:TraitValue"
+      }
+    ],
+    "Description": [
+      "Sets the value of a numeric trait (determined by traitID) of the nth effect of an ingestible/base effect/actor effect.",
+      "Effect numeric trait IDs:",
+      "0      Magnitude",
+      "1      Area",
+      "2      Duration",
+      "3      Range (0 - Self, 1 - Touch, 2 - Target)"
+    ],
+    "Name": "SetNthEffectTraitNumeric",
+    "Version": "5",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "effect",
+      "effects"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:Form",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:Effects"
+      }
+    ],
+    "Description": [
+      "Returns the number of actor effects of an actor."
+    ],
+    "Name": "GetNumActorEffects",
+    "Version": "5",
+    "Convention": "E",
+    "Tags": [
+      "effect",
+      "effects"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "int:EffectIndex"
+      },
+      {
+        "type": "ref:BaseForm",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:ActorEffect"
+      }
+    ],
+    "Description": [
+      "Returns the nth actor effect of an actor."
+    ],
+    "Name": "GetNthActorEffect",
+    "Version": "5",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "effect",
+      "effects"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:CombatStyle"
+      },
+      {
+        "url": "Combat_Style_Flags",
+        "type": "int:FlagID"
+      },
+      {
+        "type": "bool:NewValue"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:FlagValue"
+      }
+    ],
+    "Description": [
+      "Sets a combat style&#39;s flag value (determined by flagID)."
+    ],
+    "Name": "SetCombatStyleFlag",
+    "Version": "2",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "combat style"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "int:MenuCode"
+      }
+    ],
+    "Description": [
+      "Returns the menu code of the menu over which the mouse cursor is positioned when the command is called. These are the same codes used by the MenuMode function."
+    ],
+    "Name": "GetActiveMenuMode",
+    "Version": "6",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "menu",
+      "interface"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "string:Name"
+      }
+    ],
+    "Description": [
+      "Returns the name of the menu element currently highlighted by the mouse cursor, as defined in the menu XML file."
+    ],
+    "Name": "GetActiveUIComponentName",
+    "Version": "6",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "interface",
+      "UI"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "string:Name"
+      }
+    ],
+    "Description": [
+      "Like GetActiveUIComponentName, returns the name of the menu element currently highlighted by the mouse cursor, if any. However, the returned name is fully qualified with the names of the element&#39;s parents in a form suitable to pass to commands like GetUIFloat."
+    ],
+    "Name": "GetActiveUIComponentFullName",
+    "Version": "6",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "interface",
+      "UI"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "ReturnType": [
+      {
+        "type": "int:ID"
+      }
+    ],
+    "Description": [
+      "Returns the integer ID of the menu element currently highlighted by the mouse cursor, as defined by that element&#39;s id trait in the menu XML file."
+    ],
+    "Name": "GetActiveUIComponentID",
+    "Version": "6",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "interface",
+      "UI"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "int:MenuCode"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "ref:Target"
+      }
+    ],
+    "Description": [
+      "Returns the reference from which the specified menu is derived (if currently open). The returned reference varies, depending on the menu:",
+      "1008      The container/actor inventory currently open.",
+      "1009      The actor being spoken to.",
+      "1014      The door/container being picked.",
+      "1053      The actor being bartered with.",
+      "1055      The terminal being hacked.",
+      "1057      The terminal being used.",
+      "1075      The actor whose companion-wheel is being used."
+    ],
+    "Name": "GetMenuTargetRef",
+    "Version": "6",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "interface",
+      "UI"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "int:MenuCode"
+      },
+      {
+        "type": "bool:UseMenuTarget",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "int:FilterCode"
+      }
+    ],
+    "Description": [
+      "Returns a code indicating the current item-filter option selected in the specified menu. If useMenuTarget is non-zero, the function returns the filter selected for the target reference (right side), otherwise it returns the filter selected for the player (left side). Obviously, this function is usable only with the inventory, container and barter menus (1002, 1008 and 1053, respectively).",
+      "0      None",
+      "1      Weapons",
+      "2      Apparel",
+      "3      Aid",
+      "4      Misc",
+      "5      Ammo"
+    ],
+    "Name": "GetMenuItemFilter",
+    "Version": "6",
+    "Condition": "False",
+    "Convention": "B",
+    "Tags": [
+      "interface",
+      "UI"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "string:ComponentPath"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "bool:Successful"
+      }
+    ],
+    "Description": [
+      "Simulates the user clicking on the specified UI component. The component must be click-able, and have an id trait."
+    ],
+    "Name": "ClickMenuButton",
+    "Version": "6",
+    "Convention": "B",
+    "Tags": [
+      "interface",
+      "UI"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "ref:ItemOrFormList"
+      },
+      {
+        "type": "ref:Target"
+      },
+      {
+        "type": "int:Quantity",
+        "optional": "true"
+      }
+    ],
+    "Description": [
+      "Similar to the vanilla RemoveItem - removes quantity of the specified item from the calling reference&#39;s inventory. However, instead of being destroyed, the items are moved to the specified target container/actor, retaining all their current stats (health, script, mods, ownership, etc.). If quantity is not specified or is &lt;= 0, all instances of the item are removed. The function accepts a FormList as parameter (in place of an item) and also supports sub-lists."
+    ],
+    "Name": "RemoveItemTarget",
+    "Version": "7",
+    "Condition": "False",
+    "Convention": "R",
+    "Tags": [
+      "inventory"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "int:DataType"
+      },
+      {
+        "type": "ref:BaseForm",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:DataValue"
+      }
+    ],
+    "Description": [
+      "Returns the specified leveling data value of an actor. The value returned is determined by dataType: ",
+      "0 - Fixed Level/Level Mult",
+      "1 - Calc Min",
+      "2 - Calc Max."
+    ],
+    "Name": "GetActorLevelingData",
+    "Version": "7",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "actor"
+    ],
+    "FromPlugin": "JIP NVSE"
+  },
+  {
+    "Parameters": [
+      {
+        "type": "int:DataType"
+      },
+      {
+        "type": "float:NewValue"
+      },
+      {
+        "type": "ref:BaseForm",
+        "optional": "true"
+      }
+    ],
+    "ReturnType": [
+      {
+        "type": "float:DataValue"
+      }
+    ],
+    "Description": [
+      "Sets the specified leveling data value of an actor. The value that is set is determined by dataType:",
+      "0 - Fixed Level/Level Mult",
+      "1 - Calc Min",
+      "2 - Calc Max."
+    ],
+    "Name": "SetActorLevelingData",
+    "Version": "7",
+    "Condition": "False",
+    "Convention": "E",
+    "Tags": [
+      "actor"
+    ],
+    "FromPlugin": "JIP NVSE"
+  }
+]

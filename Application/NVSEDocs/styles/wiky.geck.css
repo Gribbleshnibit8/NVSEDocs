@@ -1,0 +1,27 @@
+pre { font-family: Lucida Console, Monaco, monospace; }
+a {color: inherit; text-decoration: none; }
+
+pre.syntax {font-size:100%; background: #eed; border:1px dotted #999; padding:0 0.5em; overflow:auto; }
+
+span.cmt { font-style: italic; color: green; }
+span.cmt a:hover { color: darkgreen; }
+
+span.str { font-style: italic; color: purple; }
+
+span.blk { font-style: bold; color: red; }
+span.blk a:hover { color: darkred; }
+
+span.vnl { color: blue; }
+span.vnl a:hover { color: darkblue; }
+
+span.nvse { text-decoration: underline; color: blue; }
+span.nvse a:hover { color: darkblue; }
+
+span.plg { text-decoration: underline; font-style: italic; color: blue; }
+
+span.op { color: orange; }
+
+span.av { color: darkorange; }
+
+
+/* '(.*?)',?\s? */

@@ -1,0 +1,1 @@
+Reference guide for the New Vegas Script Extender functions.
